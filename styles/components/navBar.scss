@@ -1,0 +1,19 @@
+.navBar {
+  opacity: 0;
+  height: 88px;
+  max-height: 0;
+  transition: 0.4s;
+  &.open {
+    opacity: 1;
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .navBar {
+    height: auto;
+    opacity: 1;
+    max-height: 100vh;
+  }
+}
