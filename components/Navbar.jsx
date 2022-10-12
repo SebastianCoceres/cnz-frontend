@@ -34,8 +34,8 @@ function Navbar() {
             menuOpen ? "open" : ""
           }`}
         >
-          <Link href="/">
-            <a className="p-4 lg:p-0 lg:mr-5 hover:text-white">Inicio</a>
+          <Link href="/news">
+            <a className="p-4 lg:p-0 lg:mr-5 hover:text-white">Noticias</a>
           </Link>
           <Link href="#">
             <a className="p-4 lg:p-0 lg:mr-5 hover:text-white">

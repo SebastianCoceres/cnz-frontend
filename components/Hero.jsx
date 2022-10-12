@@ -1,21 +1,29 @@
-import React from "react";
-import Image from "next/image";
+import React, {useEffect} from "react";
+import mainBackground from "../public/fondo.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-function Hero({ mainBackground }) {
-  const image = `http://localhost:1337${mainBackground.url}`;
+function Hero() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <section className={`relative`}>
-      <div className="absolute inset-0">
-        <Image
-          src={image}
-          layout="fill"
-          alt="Picture of the author"
-          className="object-cover"
-        />
-      </div>
+      <div
+        className="absolute inset-0"
+        style={{
+          width: "100%",
+          height: "100%",
+          backgroundImage: `url(${mainBackground.src})`,
+          backgroundAttachment: "fixed",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      ></div>
       <div className="absolute inset-0 bg-black/75 sm:bg-transparent sm:bg-gradient-to-r sm:from-black/95 sm:to-white/25"></div>
 
-      <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+      <div data-aos="fade-up" data-aos-duration="1500" className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="max-w-xl text-center sm:text-left">
           <h1 className="text-3xl font-extrabold sm:text-5xl text-white">
             Club Náutico <strong className="text-red-600">Zaragoza</strong>

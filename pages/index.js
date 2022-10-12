@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Hero from "../components/Hero";
 import Location from "../components/Location";
+import News from "./news";
 
-export default function Home({ mainBackground }) {
+export default function Home({ latestPosts }) {
   return (
     <div>
       <Head>
@@ -12,7 +13,8 @@ export default function Home({ mainBackground }) {
       </Head>
 
       <main>
-        <Hero mainBackground={mainBackground} />
+        <Hero />
+        <News posts={latestPosts} />
         <Location />
       </main>
     </div>
@@ -20,15 +22,15 @@ export default function Home({ mainBackground }) {
 }
 
 export async function getStaticProps() {
-  const hero = await fetch(
-    "http://localhost:1337/api/statics?populate=*&filters[Slug][$eq]=background"
+  const res = await fetch(
+    "http://localhost:1337/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc"
   );
 
-  const heroimg = await hero.json();
+  const latestPosts = await res.json();
 
   return {
     props: {
-      mainBackground: heroimg.data[0].attributes.image.data.attributes,
+      latestPosts: latestPosts.data,
     },
   };
 }

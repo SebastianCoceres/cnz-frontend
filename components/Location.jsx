@@ -1,12 +1,8 @@
 import React from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaWhatsapp,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 
-import { IoLogoWhatsapp } from "react-icons/io";
+import { BsWhatsapp } from "react-icons/bs";
+import SocialButton from "./SocialButton";
 
 function Location() {
   return (
@@ -35,28 +31,33 @@ function Location() {
             </div>
           </div>
         </div>
-        <div className="lg:w-1/3 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-          <h2 className="text-black text-2xl mb-1 font-medium title-font">
-            Encuéntranos en:
+        <div className="lg:w-1/3 flex flex-col justify-center md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+          <h2 className="text-black text-2xl mb-4 font-medium title-font leading-4">
+            <span className="block mb-0">Encuéntranos en:</span>
+            <span className="inline-block border-b-2 border-b-gray-400 h-1 w-36"></span>
           </h2>
-          <ul className="leading-relaxed mb-5 flex justify-around lg:flex-col">
-            <li>
-              <a
-                target="_blank"
-                rel="noopener nofollow noreferrer"
-                href="https://www.facebook.com/clubnauticozaragoza/"
-                className="py-8 flex "
+          <ul className="leading-relaxed mb-5 flex justify-around flex-wrap -mx-4">
+            <li
+              className="w-full px-4 mb-2"
+              title="facebook.com/clubnauticozaragoza/"
+            >
+              <SocialButton
+                title="Facebook"
+                link="https://www.facebook.com/clubnauticozaragoza/"
               >
-                <FaFacebook className="text-3xl text-[#0676e8] bg-white rounded-full" />
-                <span className="ml-4 hidden lg:inline-block hover:text-[#0676e8]">facebook.com/clubnauticozaragoza/</span>
-              </a>
+                <div className="relative">
+                  <div className="bg-white w-5 h-5 absolute top-0 left-0 -translate-y-[50%] -translate-x-[50%] rounded-md"></div>
+                  <FaFacebook className="w-6 h-6 absolute top-0 left-0 -translate-y-[50%] -translate-x-[50%]  text-[#0676e8] bg-white rounded-full" />
+                </div>
+              </SocialButton>
             </li>
-            <li>
-              <a
-                target="_blank"
-                rel="noopener nofollow noreferrer"
-                href="https://www.instagram.com/clubnauticozaragoza/"
-                className="py-8 flex "
+            <li
+              className="w-full px-4 mb-2"
+              title="instagram.com/clubnauticozaragoza/"
+            >
+              <SocialButton
+                title="instagram"
+                link="https://www.instagram.com/clubnauticozaragoza/"
               >
                 <svg width="0" height="0">
                   <linearGradient
@@ -71,34 +72,38 @@ function Location() {
                     <stop stopColor="#FCAF45" offset="100%" />
                   </linearGradient>
                 </svg>
-                <FaInstagram
-                  className="text-3xl"
-                  style={{ fill: "url(#instagram-gradient)" }}
-                />
-                <span className="ml-4 hidden lg:inline-block hover:text-[#C13584]">instagram.com/clubnauticozaragoza/</span>
-              </a>
+                <div className="relative">
+                  <div className="bg-white w-5 h-5 absolute top-0 left-0 -translate-y-[50%] -translate-x-[50%] rounded-md"></div>
+                  <FaInstagram
+                    className="w-6 h-6 absolute top-0 left-0 -translate-y-[50%] -translate-x-[50%] "
+                    style={{ fill: "url(#instagram-gradient)" }}
+                  />
+                </div>
+              </SocialButton>
             </li>
-            <li>
-              <a
-                className="py-8 flex "
-                target="_blank"
-                rel="noopener nofollow noreferrer"
-                href="mailto:clubnauticozaragoza@gmail.com"
+            <li
+              className="w-full px-4 mb-2"
+              title="clubnauticozaragoza@gmail.com"
+            >
+              <SocialButton
+                title="Correo electrónico"
+                link="mailto:clubnauticozaragoza@gmail.com"
               >
-                <FaEnvelope className="text-3xl text-black" />
-                <span className="ml-4 hidden lg:inline-block hover:text-slate-500">clubnauticozaragoza@gmail.com</span>
-              </a>
+                <div className="relative">
+                  <FaEnvelope className="w-6 h-6 absolute top-0 left-0  -translate-y-[50%] -translate-x-[50%] text-gray-500 group-hover:text-white" />
+                </div>
+              </SocialButton>
             </li>
-            <li>
-              <a
-                className="py-8 flex "
-                target="_blank"
-                rel="noopener nofollow noreferrer"
-                href="https://wa.me/34676610277?text=Hola%20¡Quiero%20unirme%20a%20CNZ!"
+            <li className="w-full px-4 mb-2" title="+34 676 610 277">
+              <SocialButton
+                title="Whatsapp"
+                link="https://wa.me/34676610277?text=Hola%20¡Quiero%20unirme%20a%20CNZ!"
               >
-                <IoLogoWhatsapp className="text-3xl text-[#25D366] " />
-                <span className="ml-4 hidden lg:inline-block hover:text-[#25D366]">+34 676 61 02 77</span>
-              </a>
+                <div className="relative">
+                  <div className="bg-white w-5 h-5 absolute top-0 left-0 -translate-y-[50%] -translate-x-[50%] rounded-md"></div>
+                  <BsWhatsapp className="w-6 h-6 absolute top-0 left-0  -translate-y-[50%] -translate-x-[50%] text-[#25D366] icon-fill" />
+                </div>
+              </SocialButton>
             </li>
           </ul>
         </div>
