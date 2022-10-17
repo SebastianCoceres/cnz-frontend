@@ -15,9 +15,7 @@ function Navbar() {
             <a className="flex title-font font-medium items-center text-white lg:mb-0">
               <Image src={logo} layout="fixed" width={30} height={30} />
 
-              <span className="ml-3 text-xl">
-                Club Náutico Zaragoza
-              </span>
+              <h1 className="ml-3 text-xl">Club Náutico Zaragoza</h1>
             </a>
           </Link>
           <button
@@ -35,23 +33,54 @@ function Navbar() {
           }`}
         >
           <Link href="/news">
-            <a className="p-4 lg:p-0 lg:mr-5 hover:text-white">Noticias</a>
-          </Link>
-          <Link href="#">
-            <a className="p-4 lg:p-0 lg:mr-5 hover:text-white">
-              Sobre Nosotros
+            <a
+              className="p-4 lg:p-0 lg:mr-5 hover:text-white"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
+              Noticias
             </a>
           </Link>
           <Link href="#">
-            <a className="p-4 lg:p-0 lg:mr-5 hover:text-white">
+            <a
+              className="p-4 lg:p-0 lg:mr-5 hover:text-white"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
+              Sobre Nosotros
+            </a>
+          </Link>
+          <Link href="/deportes">
+            <a
+              className="p-4 lg:p-0 lg:mr-5 hover:text-white"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
               Secciones deportivas
             </a>
           </Link>
           <Link href="#">
-            <a className="p-4 lg:p-0 lg:mr-5 hover:text-white">Horarios</a>
+            <a
+              className="p-4 lg:p-0 lg:mr-5 hover:text-white"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
+              Horarios
+            </a>
           </Link>
           <Link href="#">
-            <a className="p-4 lg:p-0 lg:mr-5 hover:text-white">Contacto</a>
+            <a
+              className="p-4 lg:p-0 lg:mr-5 hover:text-white"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
+              Contacto
+            </a>
           </Link>
         </nav>
       </div>
@@ -60,17 +89,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-export async function getStaticProps() {
-  const logo = await fetch(
-    "http://localhost:1337/api/statics?populate=*&filters[Slug][$eq]=logo"
-  );
-
-  const logoimg = await logo.json();
-  console.log(logoimg);
-  return {
-    props: {
-      logo: logoimg.data[0].attributes.image.data.attributes,
-    },
-  };
-}

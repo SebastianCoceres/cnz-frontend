@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Gallery from "../components/Gallery";
 import Hero from "../components/Hero";
 import Location from "../components/Location";
 import News from "./news";
@@ -14,7 +15,8 @@ export default function Home({ latestPosts }) {
 
       <main>
         <Hero />
-        <News posts={latestPosts} />
+        <News posts={latestPosts} loadMore={false} />
+        <Gallery /> {/*Hacer que las imagenes sean links a los respectivos deportes*/}
         <Location />
       </main>
     </div>
@@ -23,7 +25,7 @@ export default function Home({ latestPosts }) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    "http://localhost:1337/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc"
+    `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
   );
 
   const latestPosts = await res.json();

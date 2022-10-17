@@ -2,17 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  position: relative;
-}
-
-body {
-  overflow-x: hidden;
-  scroll-padding-top: 70px;
-}
-
-.instagram {
-  -webkit-text-fill-color: transparent;
-}
-
+@import "./globals.scss";
 @import "./components/navBar.scss";
+
+.section-container {
+  .section-title {
+    display: inline-block;
+    background-image: linear-gradient(#6366f1, #6366f1);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 20% 5px;
+    transition: background-size 0.3s;
+  }
+
+  &:hover .section-title {
+    background-size: 100% 5px;
+  }
+}
+
+@import "./components/aricles.scss";
+@import "./components/sportCard.scss";

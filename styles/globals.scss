@@ -1,0 +1,18 @@
+html {
+  position: relative;
+}
+
+body {
+  overflow-x: hidden;
+  scroll-padding-top: 70px;
+}
+
+body > div#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.instagram {
+  -webkit-text-fill-color: transparent;
+}

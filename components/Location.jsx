@@ -7,8 +7,8 @@ import SocialButton from "./SocialButton";
 function Location() {
   return (
     <section className="body-font relative">
-      <div className="container px-5 py-24 mx-auto flex lg:flex-nowrap flex-wrap min-h-[50em]">
-        <div className="w-full lg:w-2/3 bg-gray-900 rounded-lg overflow-hidden lg:mr-10 p-10 flex items-end justify-start relative min-h-[30em]">
+      <div className="lg:container px-5 py-24 mx-auto flex lg:flex-nowrap flex-wrap min-h-[50em]">
+        <div className="w-full md:w-2/3 lg:w-3/4 bg-gray-900 rounded-lg overflow-hidden lg:mr-10 p-10 flex items-end justify-start relative min-h-[30em]">
           <iframe
             width="100%"
             height="100%"
@@ -31,7 +31,7 @@ function Location() {
             </div>
           </div>
         </div>
-        <div className="lg:w-1/3 flex flex-col justify-center md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <div className="md:w-1/3 lg:w-1/4 flex flex-col justify-center md:ml-auto w-full px-4 md:py-8 mt-8 md:mt-0">
           <h2 className="text-black text-2xl mb-4 font-medium title-font leading-4">
             <span className="block mb-0">Encuéntranos en:</span>
             <span className="inline-block border-b-2 border-b-gray-400 h-1 w-36"></span>
