@@ -22,10 +22,11 @@ function NewsPage({ article }) {
               src={`${process.env.NEXT_PUBLIC_BASEURL}${article.portrait.data.attributes.url}`}
             />
           </div>
-          <div className="lg:flex-grow lg:w-1/2 xl:px-4 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h2 className="sm:text-3xl text-2xl font-bold title-font pb-2 text-gray-900">
+          <div className="lg:flex-grow lg:w-1/2 xl:px-8 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h2 className="sm:text-4xl text-2xl font-bold  text-gray-900">
               {article.title}
             </h2>
+            <hr className="border-b-slate-200 border w-[50%] mb-4 mt-2"/>
             <article
               className="article__content "
               dangerouslySetInnerHTML={{ __html: htmlFix }}

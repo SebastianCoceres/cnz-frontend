@@ -1,10 +1,11 @@
 import Head from "next/head";
-import Gallery from "../components/Gallery";
+
 import Hero from "../components/Hero";
+import Gallery from "../components/Gallery";
 import Location from "../components/Location";
 import News from "./news";
 
-export default function Home({ latestPosts }) {
+export default function Home({ latestPosts, sports }) {
   return (
     <div>
       <Head>
@@ -16,7 +17,8 @@ export default function Home({ latestPosts }) {
       <main>
         <Hero />
         <News posts={latestPosts} loadMore={false} />
-        <Gallery /> {/*Hacer que las imagenes sean links a los respectivos deportes*/}
+        <Gallery images={sports} />
+        {/*Hacer que las imagenes sean links a los respectivos deportes*/}
         <Location />
       </main>
     </div>
@@ -27,12 +29,19 @@ export async function getStaticProps() {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
   );
+  const resSports = await fetch(
+    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order`
+  );
 
   const latestPosts = await res.json();
+  const sports = await resSports.json();
+
+  console.log(sports)
 
   return {
     props: {
       latestPosts: latestPosts.data,
+      sports: sports.data,
     },
   };
 }
