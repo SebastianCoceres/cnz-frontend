@@ -4,6 +4,7 @@
 
 @import "./globals.scss";
 @import "./components/navBar.scss";
+@import "./components/hero.scss";
 
 .section-container {
   .section-title {
@@ -20,5 +21,5 @@
   }
 }
 
-@import "./components/aricles.scss";
+@import "./components/articles.scss";
 @import "./components/sportCard.scss";

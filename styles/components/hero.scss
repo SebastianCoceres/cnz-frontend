@@ -1,0 +1,12 @@
+.herobg {
+  @media (max-width: 768px) {
+    background-position: -20em;
+  }
+
+  @media (max-width: 550px) {
+    background-position: -28em;
+  }
+  @media (max-width: 425px) {
+    background-position: -36em;
+  }
+}

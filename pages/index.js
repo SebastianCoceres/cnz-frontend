@@ -1,11 +1,20 @@
+import React, { useEffect } from "react";
 import Head from "next/head";
-
 import Hero from "../components/Hero";
 import Gallery from "../components/Gallery";
 import Location from "../components/Location";
 import News from "./news";
+import { useRouter } from "next/router";
+import useScrollSmooth from "../hooks/useScrollSmooth";
 
 export default function Home({ latestPosts, sports }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    let params = router.query;
+    params.scrollTo && setTimeout(() => useScrollSmooth("#contacto"), 1500);
+  }, []);
+
   return (
     <div>
       <Head>
@@ -18,7 +27,6 @@ export default function Home({ latestPosts, sports }) {
         <Hero />
         <News posts={latestPosts} loadMore={false} />
         <Gallery images={sports} />
-        {/*Hacer que las imagenes sean links a los respectivos deportes*/}
         <Location />
       </main>
     </div>
@@ -35,8 +43,6 @@ export async function getStaticProps() {
 
   const latestPosts = await res.json();
   const sports = await resSports.json();
-
-  console.log(sports)
 
   return {
     props: {

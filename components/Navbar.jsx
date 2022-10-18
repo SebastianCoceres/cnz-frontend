@@ -3,9 +3,12 @@ import { FaBars } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/Logo.png";
+import useScrollSmooth from "../hooks/useScrollSmooth";
+import { useRouter } from "next/router";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const router = useRouter();
 
   return (
     <header className="text-gray-400 bg-gray-900 body-font fixed top-0 left-0 right-0 z-[1000]">
@@ -42,7 +45,7 @@ function Navbar() {
               Noticias
             </a>
           </Link>
-          <Link href="#">
+          <Link href="/about">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {
@@ -72,11 +75,13 @@ function Navbar() {
               Horarios
             </a>
           </Link>
-          <Link href="#">
+          <Link href="#contacto">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 setMenuOpen(false);
+                useScrollSmooth("#contacto") ? null : router.push("/?scrollTo=contacto");
               }}
             >
               Contacto

@@ -6,7 +6,7 @@ import SocialButton from "./SocialButton";
 
 function Location() {
   return (
-    <section className="body-font relative">
+    <section id="contacto" className="body-font relative">
       <div className="lg:container px-5 py-24 mx-auto flex lg:flex-nowrap flex-wrap min-h-[50em]">
         <div className="w-full md:w-2/3 lg:w-3/4 bg-gray-900 rounded-lg overflow-hidden lg:mr-10 p-10 flex items-end justify-start relative min-h-[30em]">
           <iframe
@@ -56,7 +56,7 @@ function Location() {
               title="instagram.com/clubnauticozaragoza/"
             >
               <SocialButton
-                title="instagram"
+                title="Instagram"
                 link="https://www.instagram.com/clubnauticozaragoza/"
               >
                 <svg width="0" height="0">

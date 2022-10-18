@@ -14,19 +14,19 @@ function NewsPage({ article }) {
   return (
     <main className="container mx-auto py-24 px-4 md:px-8">
       <section className="text-gray-600 body-font">
-        <div className="flex flex-col md:flex-row  items-start px-5 py-24 ">
-          <div class="lg:max-w-lg  lg:w-1/2 mb-4 sticky top-32">
+        <div className="flex flex-col lg:flex-row  items-start px-5 py-24 ">
+          <div className="lg:max-w-lg  lg:w-1/3 xl:w-1/2 mb-4 lg:sticky top-32 ">
             <img
-              className="object-cover object-center h-full w-full rounded-lg"
+              className="object-cover object-center h-full w-full rounded-lg mb-8"
               alt=""
               src={`${process.env.NEXT_PUBLIC_BASEURL}${article.portrait.data.attributes.url}`}
             />
           </div>
-          <div className="lg:flex-grow lg:w-1/2 xl:px-8 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <div className="lg:flex-grow lg:w-2/3 xl:w-1/2 lg:px-8 flex flex-col md:items-start mb-16 md:mb-0 items-center">
             <h2 className="sm:text-4xl text-2xl font-bold  text-gray-900">
               {article.title}
             </h2>
-            <hr className="border-b-slate-200 border w-[50%] mb-4 mt-2"/>
+            <hr className="border-b-slate-200 border w-[50%] mb-4 mt-2" />
             <article
               className="article__content "
               dangerouslySetInnerHTML={{ __html: htmlFix }}
@@ -40,14 +40,14 @@ function NewsPage({ article }) {
             </h3>
             {article.news.data.map((el) => {
               return (
-                <div className="border border-l-4 p-4 flex items-center justify-between w-1/2">
+                <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between lg:w-1/2">
                   <Link href={`/news/${el.id}`}>
                     <a className="text-xl flex items-center ">
-                      <FaAngleRight />
+                      <FaAngleRight className="hidden md:inline-block"/>
                       {el.attributes.title}
                     </a>
                   </Link>
-                  <small className="text-xs text-gray-500 ml-4">
+                  <small className="text-xs text-gray-500 md:ml-4">
                     ({useFormatDate(el.attributes.publishedAt)})
                   </small>
                 </div>

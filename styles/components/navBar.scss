@@ -3,6 +3,7 @@
   height: 88px;
   max-height: 0;
   transition: 0.4s;
+  overflow: hidden;
   &.open {
     opacity: 1;
     height: 100vh;

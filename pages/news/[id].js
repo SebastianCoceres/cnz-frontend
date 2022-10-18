@@ -16,7 +16,7 @@ function NewsPage({ article, latestPosts }) {
     <main className="container mx-auto py-24 px-4 md:px-8">
       <section>
         <header className="mb-12">
-          <div className="md:rounded-lg h-80 overflow-hidden mb-8 -mx-4 md:mx-0">
+          <div className="rounded-lg h-80 overflow-hidden mb-8">
             <img
               alt="content"
               className="object-cover object-center h-full w-full"
@@ -69,7 +69,7 @@ function NewsPage({ article, latestPosts }) {
           })}
         </div>
       </section>
-      <section>
+      <section className="-m-4">
         <News posts={latestPosts} title="Últimas noticias" loadMore={false}/>
       </section>
     </main>
