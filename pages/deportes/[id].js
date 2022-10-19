@@ -41,7 +41,7 @@ function NewsPage({ article }) {
             {article.news.data.map((el) => {
               return (
                 <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between lg:w-1/2">
-                  <Link href={`/news/${el.id}`}>
+                  <Link href={`/noticias/${el.id}`}>
                     <a className="text-xl flex items-center ">
                       <FaAngleRight className="hidden md:inline-block"/>
                       {el.attributes.title}

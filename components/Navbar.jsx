@@ -35,7 +35,7 @@ function Navbar() {
             menuOpen ? "open" : ""
           }`}
         >
-          <Link href="/news">
+          <Link href="/noticias">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {
@@ -45,7 +45,7 @@ function Navbar() {
               Noticias
             </a>
           </Link>
-          <Link href="/about">
+          <Link href="/sobre-nosotros">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {

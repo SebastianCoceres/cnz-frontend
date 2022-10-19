@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function FileImage({ file }) {
   return (
-    <div className="group w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 aspect-[4/3] mb-4 relative overflow-hidden">
+    <div className="group w-full sm:w-1/2 md:w-1/3 px-4 aspect-[4/3] mb-4 relative overflow-hidden">
       <div className="h-full border border-slate-100 relative">
         <Image
           className="w-full h-full object-cover"

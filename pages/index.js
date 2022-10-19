@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import Hero from "../components/Hero";
 import Gallery from "../components/Gallery";
 import Location from "../components/Location";
-import News from "./news";
-import { useRouter } from "next/router";
+import News from "./noticias";
+import About from "../components/About";
+
 import useScrollSmooth from "../hooks/useScrollSmooth";
 
 export default function Home({ latestPosts, sports }) {
@@ -25,8 +27,9 @@ export default function Home({ latestPosts, sports }) {
 
       <main>
         <Hero />
-        <News posts={latestPosts} loadMore={false} />
+        <About link={true} />
         <Gallery images={sports} />
+        <News posts={latestPosts} loadMore={false} />
         <Location />
       </main>
     </div>
@@ -38,7 +41,7 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
   );
   const resSports = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order`
+    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6`
   );
 
   const latestPosts = await res.json();

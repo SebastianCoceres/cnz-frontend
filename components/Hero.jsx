@@ -51,9 +51,11 @@ function Hero() {
                 ¡Quiero unirme!
               </a>
             </Link>
-            <a className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-blue-700 focus:outline-none focus:ring active:text-blue-500 sm:w-auto">
-              Conócenos
-            </a>
+            <Link href="/sobre-nosotros">
+              <a className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-blue-700 focus:outline-none focus:ring active:text-blue-500 sm:w-auto">
+                Conócenos
+              </a>
+            </Link>
           </div>
         </div>
       </div>
