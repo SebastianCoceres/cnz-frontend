@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import useScrollSmooth from "../hooks/useScrollSmooth";
+import Banderin from "../public/Banderin.png";
 
 function Hero() {
   useEffect(() => {
@@ -31,8 +32,11 @@ function Hero() {
         className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 flex h-screen items-center justify-center md:justify-start lg:px-8"
       >
         <div className="max-w-xl text-center sm:text-left">
+          <figure className="flex justify-center">
+            <img src={Banderin.src} alt="" className="w-40 h-40 object-contain"/>
+          </figure>
           <h1 className="text-3xl font-extrabold sm:text-5xl text-white">
-            Club Náutico <strong className="text-red-600">Zaragoza</strong>
+            Club Náutico Zaragoza
           </h1>
 
           <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-white">

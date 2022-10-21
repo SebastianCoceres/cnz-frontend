@@ -8,11 +8,12 @@ function About({ link = false }) {
   return (
     <section className="container px-4 mx-auto text-gray-600 body-font py-24 flex flex-col justify-center">
       <div className="lg:w-4/6 mx-auto">
-        <div className=" relative rounded-lg h-64 overflow-hidden">
-          <Link href="/exterior_club.jpg">
+        <div className="relative rounded-lg h-64 overflow-hidden">
+          <Link href="../public/exterior_club.jpg">
             <a>
+              {console.log(exteriorClub)}
               <Image
-                src={exteriorClub}
+                src={exteriorClub.src}
                 layout="fill"
                 className="object-cover"
               />

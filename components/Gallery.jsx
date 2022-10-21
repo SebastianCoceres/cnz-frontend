@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import GalleryImg from "./GalleryImg";
 
 function Gallery({ images }) {
   return (
@@ -20,92 +21,34 @@ function Gallery({ images }) {
           </p>
         </div>
         <div className="flex flex-wrap md:-m-2 -m-1">
-          <div className="grid grid-cols-4 gap-4 grid-rows-3 grid-flow-row auto-rows-fr text-white">
-            <figure className=" relative col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2">
-              <Link href={`./deportes/${images[0].id}`}>
-                <a>
-                  <img
-                    alt=""
-                    className="w-full object-cover h-full object-center block"
-                    src={`${process.env.NEXT_PUBLIC_BASEURL}${images[0].attributes.portrait.data.attributes.url}`}
-                  />
-                  <figcaption className=" text-lg  font-bold absolute inset-0 w-full p-4 transition bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    {images[0].attributes.title}
-                  </figcaption>
-                </a>
-              </Link>
-            </figure>
-            <figure className=" relative col-span-4 row-span-2 md:col-span-1 md:row-span-1">
-              <Link href={`./deportes/${images[1].id}`}>
-                <a>
-                  <img
-                    alt=""
-                    className="w-full object-cover h-full object-center block"
-                    src={`${process.env.NEXT_PUBLIC_BASEURL}${images[1].attributes.portrait.data.attributes.url}`}
-                  />
-                  <figcaption className=" text-lg  font-bold absolute inset-0 w-full p-4 transition bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    {images[1].attributes.title}
-                  </figcaption>
-                </a>
-              </Link>
-            </figure>
-            <figure className=" relative col-span-4 row-span-2 md:col-span-1 md:row-span-1">
-              <Link href={`./deportes/${images[2].id}`}>
-                <a>
-                  <img
-                    alt=""
-                    className="w-full object-cover h-full object-center block"
-                    src={`${process.env.NEXT_PUBLIC_BASEURL}${images[2].attributes.portrait.data.attributes.url}`}
-                  />
-                  <figcaption className=" text-lg  font-bold absolute inset-0 w-full p-4 transition bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    {images[2].attributes.title}
-                  </figcaption>
-                </a>
-              </Link>
-            </figure>
-            <figure className=" relative col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2 ">
-              <Link href={`./deportes/${images[3].id}`}>
-                <a>
-                  <img
-                    alt=""
-                    className="w-full object-cover h-full object-center block"
-                    src={`${process.env.NEXT_PUBLIC_BASEURL}${images[3].attributes.portrait.data.attributes.url}`}
-                  />
-                  <figcaption className=" text-lg  font-bold absolute inset-0 w-full p-4 transition bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    {images[3].attributes.title}
-                  </figcaption>
-                </a>
-              </Link>
-            </figure>
-            <figure className=" relative col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-1">
-              <Link href={`./deportes/${images[4].id}`}>
-                <a>
-                  <img
-                    alt=""
-                    className="w-full object-cover h-full object-center block"
-                    src={`${process.env.NEXT_PUBLIC_BASEURL}${images[4].attributes.portrait.data.attributes.url}`}
-                  />
-                  <figcaption className=" text-lg  font-bold absolute inset-0 w-full p-4 transition bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    {images[4].attributes.title}
-                  </figcaption>
-                </a>
-              </Link>
-            </figure>
-            <figure className=" relative col-span-4 row-span-2 md:col-span-1 md:row-span-1">
-              <Link href={`./deportes/${images[5].id}`}>
-                <a>
-                  <img
-                    alt=""
-                    className="w-full object-cover h-full object-center block"
-                    src={`${process.env.NEXT_PUBLIC_BASEURL}${images[5].attributes.portrait.data.attributes.url}`}
-                  />
-                  <figcaption className=" text-lg  font-bold absolute inset-0 w-full p-4 transition bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                    {images[5].attributes.title}
-                  </figcaption>
-                </a>
-              </Link>
-            </figure>
-          </div>
+          {images.length > 0 && (
+            <div className="grid grid-cols-4 gap-4 grid-rows-3 grid-flow-row auto-rows-fr text-white">
+              <GalleryImg
+                imgArryTarget={images[0]}
+                gridSize="col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2"
+              />
+              <GalleryImg
+                imgArryTarget={images[1]}
+                gridSize="col-span-4 row-span-2 md:col-span-1 md:row-span-1"
+              />
+              <GalleryImg
+                imgArryTarget={images[2]}
+                gridSize="col-span-4 row-span-2 md:col-span-1 md:row-span-1"
+              />
+              <GalleryImg
+                imgArryTarget={images[3]}
+                gridSize="col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2"
+              />
+              <GalleryImg
+                imgArryTarget={images[4]}
+                gridSize="col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-1"
+              />
+              <GalleryImg
+                imgArryTarget={images[5]}
+                gridSize="col-span-4 row-span-2 md:col-span-1 md:row-span-1"
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>
