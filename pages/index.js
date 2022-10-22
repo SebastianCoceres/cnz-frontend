@@ -41,7 +41,7 @@ export async function getStaticProps() {
     `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
   );
   const resSports = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6`
+    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
   );
 
   const latestPosts = await res.json();

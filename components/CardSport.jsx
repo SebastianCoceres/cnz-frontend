@@ -4,7 +4,7 @@ import Link from "next/link";
 function CardSport({ sportData }) {
   return (
     <div className="sportCard w-full mb-24 px-4 text-gray-600 md:flex">
-      <figure className="w-full rounded-lg overflow-hidden md:w-1/2 h-120">
+      <figure className="w-full rounded-lg overflow-hidden md:w-1/2 h-96">
         <img
           alt="content"
           className="object-cover object-center h-full w-full "

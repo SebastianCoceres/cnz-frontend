@@ -6,12 +6,11 @@ import Link from "next/link";
 
 function About({ link = false }) {
   return (
-    <section className="container px-4 mx-auto text-gray-600 body-font py-24 flex flex-col justify-center">
+    <section className="section-container container px-4 mx-auto text-gray-600 body-font py-24 flex flex-col justify-center">
       <div className="lg:w-4/6 mx-auto">
         <div className="relative rounded-lg h-64 overflow-hidden">
           <Link href="../public/exterior_club.jpg">
             <a>
-              {console.log(exteriorClub)}
               <Image
                 src={exteriorClub.src}
                 layout="fill"
@@ -20,8 +19,11 @@ function About({ link = false }) {
             </a>
           </Link>
         </div>
-        <div className="flex flex-col sm:flex-row mt-10 mb-8">
-          <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+        <h3 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
+          Nuestra Historia
+        </h3>
+        <div className="flex flex-col lg:flex-row mt-10 mb-8">
+          <div className="lg:w-1/3 text-center lg:pr-8 lg:py-8">
             <div className="relative w-32 h-32 rounded-full inline-flex items-center justify-center">
               <Image src={banderin} layout="fill" className="object-contain" />
             </div>
@@ -31,7 +33,7 @@ function About({ link = false }) {
               </h2>
             </div>
           </div>
-          <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0">
+          <div className="lg:w-2/3 lg:pl-8 lg:py-8 lg:border-l border-gray-200 lg:border-t-0 border-t mt-4 pt-4 lg:mt-0">
             <p className="leading-relaxed text-lg mb-4">
               Inaugurado en <strong>1964</strong>, el Club Náutico de Zaragoza
               es una Asociación Deportiva Básica, con{" "}

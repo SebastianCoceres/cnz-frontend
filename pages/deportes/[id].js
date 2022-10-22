@@ -3,6 +3,7 @@ import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa";
 import useFormatDate from "../../hooks/useFormateDate";
+import useFormatTime from "../../hooks/useFormateTime";
 
 function NewsPage({ article }) {
   const sanitizeHTML = DOMPurify.sanitize(article.content);
@@ -10,6 +11,8 @@ function NewsPage({ article }) {
     'src="/uploads',
     `src="${process.env.NEXT_PUBLIC_BASEURL}/uploads`
   );
+
+  console.log(article);
 
   return (
     <main className="container mx-auto py-24 px-4 md:px-8">
@@ -33,26 +36,59 @@ function NewsPage({ article }) {
             ></article>
           </div>
         </div>
+
+        {article.calendario.length > 0 && (
+          <section className="px-5">
+            <h3 className="text-2xl font-bold mt-2 mb-4">Horarios</h3>
+            <hr className="my-4" />
+            <ul>
+              {article.calendario.map((el, i) => {
+                return (
+                  <li
+                    key={`dia-${i}`}
+                    className="mb-4 w-full flex flex-wrap items-center
+                  "
+                  >
+                    <span className="font-bold w-full lg:w-[5em] block mr-4 mb-2 text-xl ">
+                      {el.dias.data[0].attributes.dias}:
+                    </span>
+                    <div className="flex flex-wrap">
+                      {el.horarios.data.map((hora, i) => {
+                        return (
+                          <span className="text-[.8em] inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md">{`${useFormatTime(
+                            hora.attributes.Hora
+                          )}`}</span>
+                        );
+                      })}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
         {article.news.data.length > 0 && (
-          <div>
-            <h3 className="text-2xl font-bold pb-2 text-gray-900">
-              Noticias relacionadas
-            </h3>
-            {article.news.data.map((el) => {
-              return (
-                <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between lg:w-1/2">
-                  <Link href={`/noticias/${el.id}`}>
-                    <a className="text-xl flex items-center ">
-                      <FaAngleRight className="hidden md:inline-block"/>
-                      {el.attributes.title}
-                    </a>
-                  </Link>
-                  <small className="text-xs text-gray-500 md:ml-4">
-                    ({useFormatDate(el.attributes.publishedAt)})
-                  </small>
-                </div>
-              );
-            })}
+          <div className="px-5 my-16">
+            <h3 className="text-2xl font-bold pb-2">Noticias relacionadas</h3>
+            <div className="flex flex-wrap -m-2">
+              {article.news.data.map((el) => {
+                return (
+                  <div className="w-full lg:w-1/2 p-2">
+                    <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between h-full">
+                      <Link href={`/noticias/${el.id}`}>
+                        <a className="text-xl flex items-center ">
+                          <FaAngleRight className="hidden md:inline-block" />
+                          {el.attributes.title}
+                        </a>
+                      </Link>
+                      <small className="text-xs text-gray-500 md:ml-4">
+                        ({useFormatDate(el.attributes.publishedAt)})
+                      </small>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
       </section>
@@ -63,10 +99,11 @@ function NewsPage({ article }) {
 export default NewsPage;
 
 export async function getStaticProps({ params }) {
-  const sportRes = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/${params.id}?populate=*`
-  );
-  const sport = await sportRes.json();
+  const sport = await (
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/${params.id}?populate=deep`
+    )
+  ).json();
 
   return {
     props: {
@@ -76,8 +113,9 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("http://217.160.207.237:1337/api/sports");
-  const sportList = await res.json();
+  const sportList = await (
+    await fetch("http://localhost:1337/api/sports")
+  ).json();
 
   const paths = sportList.data.map((sport) => {
     return { params: { id: sport.id.toString() } };

@@ -14,12 +14,12 @@ let photos = [
 
 function Intalaciones() {
   return (
-    <section className="text-gray-600 px-4 py-24 flex items-center container mx-auto">
+    <section className="section-container text-gray-600 px-4 flex items-center container mx-auto">
       <div className="lg:w-4/6 mx-auto">
-        <div className="flex flex-col w-full mb-20">
-          <h3 className="sm:text-3xl text-2xl text-center font-medium title-font mb-4 text-gray-900">
-            Nuestras instalaciones
-          </h3>
+        <h3 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
+          Nuestras instalaciones
+        </h3>
+        <div className="flex flex-col w-full mb-20 mt-4">
           <div>
             <p className="leading-relaxed text-base">
               Una <strong>sala de entrenamientos funcionales</strong> de más de

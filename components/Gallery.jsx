@@ -20,32 +20,32 @@ function Gallery({ images }) {
             que podrás disfrutar en nuestras instalaciones.
           </p>
         </div>
-        <div className="flex flex-wrap md:-m-2 -m-1">
+        <div className="flex flex-wrap w-full">
           {images.length > 0 && (
-            <div className="grid grid-cols-4 gap-4 grid-rows-3 grid-flow-row auto-rows-fr text-white">
+            <div className="grid grid-cols-4 gap-4 grid-flow-row auto-rows-[15em] text-white">
               <GalleryImg
                 imgArryTarget={images[0]}
-                gridSize="col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2"
+                gridSize="transition-all col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2"
               />
               <GalleryImg
                 imgArryTarget={images[1]}
-                gridSize="col-span-4 row-span-2 md:col-span-1 md:row-span-1"
+                gridSize="transition-all col-span-4 row-span-2 md:col-span-1 md:row-span-1"
               />
               <GalleryImg
                 imgArryTarget={images[2]}
-                gridSize="col-span-4 row-span-2 md:col-span-1 md:row-span-1"
+                gridSize="transition-all col-span-4 row-span-2 md:col-span-1 md:row-span-1"
               />
               <GalleryImg
                 imgArryTarget={images[3]}
-                gridSize="col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2"
+                gridSize="transition-all col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-2 lg:row-span-2"
               />
               <GalleryImg
                 imgArryTarget={images[4]}
-                gridSize="col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-1"
+                gridSize="transition-all col-span-4 row-span-2 md:col-span-3 md:row-span-1 lg:col-span-1"
               />
               <GalleryImg
                 imgArryTarget={images[5]}
-                gridSize="col-span-4 row-span-2 md:col-span-1 md:row-span-1"
+                gridSize="transition-all col-span-4 row-span-2 md:col-span-1 md:row-span-1"
               />
             </div>
           )}

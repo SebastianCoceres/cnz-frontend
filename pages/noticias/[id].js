@@ -69,9 +69,11 @@ function NewsPage({ article, latestPosts }) {
           })}
         </div>
       </section>
-      <section className="-m-4">
-        <News posts={latestPosts} title="Últimas noticias" loadMore={false}/>
-      </section>
+      {latestPosts.length > 0 && (
+        <section className="-m-4">
+          <News posts={latestPosts} title="Últimas noticias" loadMore={false} />
+        </section>
+      )}
     </main>
   );
 }
@@ -99,7 +101,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("http://217.160.207.237:1337/api/posts");
+  const res = await fetch("http://localhost:1337/api/posts");
   const newsList = await res.json();
 
   const paths = newsList.data.map((news) => {

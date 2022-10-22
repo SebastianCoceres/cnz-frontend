@@ -13,13 +13,13 @@ const Team = [
 
 function OutTeam() {
   return (
-    <section className="text-gray-600 px-4 container mx-auto py-24 flex items-center">
+    <section className="section-container text-gray-600 px-4 container mx-auto py-24 flex items-center">
       <div className="lg:w-4/6 mx-auto">
-        <div className="flex flex-col text-center w-full mb-20">
-          <h3 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-            Nuestro equipo
-          </h3>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
+        <h3 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
+          Nuestro equipo
+        </h3>
+        <div className="flex flex-col w-full mb-8">
+          <p className="mt-4 mx-auto leading-relaxed text-base">
             Este Club Deportivo está dirigido por una Junta Directiva elegida
             entre sus socios y abonados, más de 300 actualmente, y que está
             compuesta por las siguientes personas:

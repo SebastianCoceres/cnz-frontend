@@ -15,7 +15,12 @@ function Navbar() {
       <div className="container mx-auto flex flex-wrap p-5 flex-col lg:flex-row justify-between">
         <div className="flex justify-between items-center">
           <Link href="/">
-            <a className="flex title-font font-medium items-center text-white lg:mb-0">
+            <a
+              className="flex title-font font-medium items-center text-white lg:mb-0"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
               <Image src={logo} layout="fixed" width={30} height={30} />
 
               <h1 className="ml-3 text-xl">Club Náutico Zaragoza</h1>
@@ -65,7 +70,7 @@ function Navbar() {
               Secciones deportivas
             </a>
           </Link>
-          <Link href="#">
+          <Link href="/horarios">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {
@@ -81,7 +86,9 @@ function Navbar() {
               onClick={(e) => {
                 e.preventDefault();
                 setMenuOpen(false);
-                useScrollSmooth("#contacto") ? null : router.push("/?scrollTo=contacto");
+                useScrollSmooth("#contacto")
+                  ? null
+                  : router.push("/?scrollTo=contacto");
               }}
             >
               Contacto

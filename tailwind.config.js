@@ -5,7 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridAutoRows: {
+        maxSize: "minmax(1fr, 30em)",
+      },
+    },
     container: {
       padding: {
         center: true,
@@ -14,7 +18,7 @@ module.exports = {
         lg: "4rem",
         xl: "5rem",
         "2xl": "6rem",
-      }
+      },
     },
   },
   plugins: [],
