@@ -1,22 +1,22 @@
-.sportCard__container {
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .sportCard__container {
     .sportCard {
       div {
         padding-left: 4em;
       }
     }
-  }
 
-  .sportCard:nth-child(even) {
-    & figure {
-      order: 2;
-    }
-    & div {
-      order: 1;
-      padding-left: 0;
-      padding-right: 4em;
-      align-items: flex-end;
-      text-align: right;
+    .sportCard:nth-child(even) {
+      & figure {
+        order: 2;
+      }
+      & div {
+        order: 1;
+        padding-left: 0;
+        padding-right: 4em;
+        align-items: flex-end;
+        text-align: right;
+      }
     }
   }
 }

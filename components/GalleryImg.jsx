@@ -1,9 +1,19 @@
 import React from "react";
 import Link from "next/link";
 
-function GalleryImg({ gridSize, imgArryTarget }) {
+function GalleryImg({
+  gridSize,
+  imgArryTarget,
+  aosAnimation = "fade-up",
+  aosDuration = 1500,
+}) {
   return (
-    <figure className={`relative ${gridSize}`}>
+    <figure
+      data-aos={aosAnimation}
+      data-aos-duration={aosDuration}
+      data-aos-once="true"
+      className={`relative ${gridSize}`}
+    >
       <Link href={`./deportes/${imgArryTarget?.id}`}>
         <a>
           <img

@@ -1,14 +1,18 @@
 html {
   position: relative;
   scroll-behavior: smooth;
+  width: 100%;
 }
 
 body {
   overflow-x: hidden;
   scroll-padding-top: 70px;
+  position: relative;
+  width: 100%;
 }
 
 body > div#__next {
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

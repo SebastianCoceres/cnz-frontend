@@ -3,7 +3,12 @@ import Link from "next/link";
 
 function CardSport({ sportData }) {
   return (
-    <div className="sportCard w-full mb-24 px-4 text-gray-600 md:flex">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      data-aos-once="true"
+      className="sportCard w-full mb-24 px-4 text-gray-600 md:flex"
+    >
       <figure className="w-full rounded-lg overflow-hidden md:w-1/2 h-96">
         <img
           alt="content"

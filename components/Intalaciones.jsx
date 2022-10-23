@@ -14,7 +14,12 @@ let photos = [
 
 function Intalaciones() {
   return (
-    <section className="section-container text-gray-600 px-4 flex items-center container mx-auto">
+    <section
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      data-aos-once="true"
+      className="section-container text-gray-600 px-4 flex items-center container mx-auto"
+    >
       <div className="lg:w-4/6 mx-auto">
         <h3 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
           Nuestras instalaciones

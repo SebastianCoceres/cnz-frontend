@@ -17,7 +17,7 @@ function NewsPage({ article }) {
   return (
     <main className="container mx-auto py-24 px-4 md:px-8">
       <section className="text-gray-600 body-font">
-        <div className="flex flex-col lg:flex-row  items-start px-5 py-24 ">
+        <div className="flex flex-col lg:flex-row  items-start py-24 ">
           <div className="lg:max-w-lg  lg:w-1/3 xl:w-1/2 mb-4 lg:sticky top-32 ">
             <img
               className="object-cover object-center h-full w-full rounded-lg mb-8"
@@ -38,14 +38,14 @@ function NewsPage({ article }) {
         </div>
 
         {article.calendario.length > 0 && (
-          <section className="px-5">
+          <section>
             <h3 className="text-2xl font-bold mt-2 mb-4">Horarios</h3>
             <hr className="my-4" />
             <ul>
               {article.calendario.map((el, i) => {
                 return (
                   <li
-                    key={`dia-${i}`}
+                    key={`diaDeporte-${i}`}
                     className="mb-4 w-full flex flex-wrap items-center
                   "
                   >
@@ -55,7 +55,7 @@ function NewsPage({ article }) {
                     <div className="flex flex-wrap">
                       {el.horarios.data.map((hora, i) => {
                         return (
-                          <span className="text-[.8em] inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md">{`${useFormatTime(
+                          <span key={`horaDeporte-${i}`} className="text-[.8em] inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md">{`${useFormatTime(
                             hora.attributes.Hora
                           )}`}</span>
                         );
@@ -68,7 +68,7 @@ function NewsPage({ article }) {
           </section>
         )}
         {article.news.data.length > 0 && (
-          <div className="px-5 my-16">
+          <div className="my-16">
             <h3 className="text-2xl font-bold pb-2">Noticias relacionadas</h3>
             <div className="flex flex-wrap -m-2">
               {article.news.data.map((el) => {
@@ -99,30 +99,38 @@ function NewsPage({ article }) {
 export default NewsPage;
 
 export async function getStaticProps({ params }) {
-  const sport = await (
-    await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/${params.id}?populate=deep`
-    )
-  ).json();
+  try {
+    const sport = await (
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/${params.id}?populate=deep`
+      )
+    ).json();
 
-  return {
-    props: {
-      article: sport.data.attributes,
-    },
-  };
+    return {
+      props: {
+        article: sport.data.attributes,
+      },
+    };
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 export async function getStaticPaths() {
-  const sportList = await (
-    await fetch("http://localhost:1337/api/sports")
-  ).json();
+  try {
+    const sportList = await (
+      await fetch("http://217.160.207.237:1337/api/sports")
+    ).json();
 
-  const paths = sportList.data.map((sport) => {
-    return { params: { id: sport.id.toString() } };
-  });
+    const paths = sportList.data.map((sport) => {
+      return { params: { id: sport.id.toString() } };
+    });
 
-  return {
-    paths,
-    fallback: false,
-  };
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (err) {
+    console.error(err);
+  }
 }

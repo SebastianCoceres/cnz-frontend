@@ -1,18 +1,12 @@
-import React, { useEffect } from "react";
 import mainBackground from "../public/fondo.jpg";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import Link from "next/link";
 import useScrollSmooth from "../hooks/useScrollSmooth";
 import Banderin from "../public/Banderin.png";
 
 function Hero() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
-    <section className={`relative`}>
+    <section className="relative">
       <div
         className="herobg absolute inset-0"
         style={{
@@ -33,7 +27,11 @@ function Hero() {
       >
         <div className="max-w-xl text-center sm:text-left">
           <figure className="flex justify-center">
-            <img src={Banderin.src} alt="" className="w-40 h-40 object-contain"/>
+            <img
+              src={Banderin.src}
+              alt=""
+              className="w-40 h-40 object-contain"
+            />
           </figure>
           <h1 className="text-3xl font-extrabold sm:text-5xl text-white">
             Club Náutico Zaragoza

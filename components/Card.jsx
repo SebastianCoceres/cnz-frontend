@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import useFormatDate from "../hooks/useFormateDate";
 
 function Card({ postData, aosDelay = 0 }) {
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <div
       data-aos="zoom-in-up"

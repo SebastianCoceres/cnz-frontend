@@ -50,16 +50,7 @@ function Navbar() {
               Noticias
             </a>
           </Link>
-          <Link href="/sobre-nosotros">
-            <a
-              className="p-4 lg:p-0 lg:mr-5 hover:text-white"
-              onClick={() => {
-                setMenuOpen(false);
-              }}
-            >
-              Sobre Nosotros
-            </a>
-          </Link>
+
           <Link href="/deportes">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
@@ -78,6 +69,16 @@ function Navbar() {
               }}
             >
               Horarios
+            </a>
+          </Link>
+          <Link href="/sobre-nosotros">
+            <a
+              className="p-4 lg:p-0 lg:mr-5 hover:text-white"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
+              Sobre Nosotros
             </a>
           </Link>
           <Link href="#contacto">

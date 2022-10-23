@@ -37,20 +37,25 @@ export default function Home({ latestPosts, sports }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
-  );
-  const resSports = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
-  );
+  try {
+    const latestPosts = await (
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
+      )
+    ).json();
+    const sports = await (
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
+      )
+    ).json();
 
-  const latestPosts = await res.json();
-  const sports = await resSports.json();
-
-  return {
-    props: {
-      latestPosts: latestPosts.data,
-      sports: sports.data,
-    },
-  };
+    return {
+      props: {
+        latestPosts: latestPosts.data,
+        sports: sports.data,
+      },
+    };
+  } catch (err) {
+    console.error(err);
+  }
 }
