@@ -1,5 +1,6 @@
 import React from "react";
 import useFormateTime from "../hooks/useFormateTime";
+import Link from "next/link";
 
 function Horarios({ sports }) {
   let sportsToCalendar = sports.filter((el) => {
@@ -15,9 +16,11 @@ function Horarios({ sports }) {
         {sportsToCalendar.map((el, i) => {
           return (
             <div key={`calendar-${i}`} className="w-full lg:w-1/2 mb-16 px-4">
-              <div className="border rounded-lg overflow-hidden">
-                <p className="text-2xl font-bold mb-4 bg-gray-900 p-4 text-white">
-                  {el.attributes.title}
+              <div className="border rounded-lg overflow-hidden h-full">
+                <p className="text-xl font-bold mb-4 bg-gray-900 p-4 text-white">
+                  <Link href={`/deportes/${el.id}`}>
+                    <a>{el.attributes.title}</a>
+                  </Link>
                 </p>
                 <div className="px-4">
                   {el.attributes.calendario.map((d, i) => {

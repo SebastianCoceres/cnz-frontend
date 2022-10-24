@@ -106,7 +106,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   try {
-    const res = await fetch("http://217.160.207.237:1337/api/posts");
+    const res = await fetch("http://localhost:1337/api/posts");
     const newsList = await res.json();
 
     const paths = newsList.data.map((news) => {

@@ -1,10 +1,8 @@
-import mainBackground from "../public/fondo.jpg";
-
 import Link from "next/link";
 import useScrollSmooth from "../hooks/useScrollSmooth";
 import Banderin from "../public/Banderin.png";
 
-function Hero() {
+function Hero({ fondo, heroLogo }) {
   return (
     <section className="relative">
       <div
@@ -12,7 +10,7 @@ function Hero() {
         style={{
           width: "100%",
           height: "100%",
-          backgroundImage: `url(${mainBackground.src})`,
+          backgroundImage: `url(${process.env.NEXT_PUBLIC_BASEURL}${fondo.attributes.image.data.attributes.url})`,
           backgroundAttachment: "fixed",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -28,7 +26,7 @@ function Hero() {
         <div className="max-w-xl text-center sm:text-left">
           <figure className="flex justify-center">
             <img
-              src={Banderin.src}
+              src={`${process.env.NEXT_PUBLIC_BASEURL}${heroLogo.attributes.image.data.attributes.url}`}
               alt=""
               className="w-40 h-40 object-contain"
             />

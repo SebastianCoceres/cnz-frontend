@@ -1,17 +1,17 @@
 import React from "react";
 import TeamCard from "../components/TeamCard";
 
-const Team = [
-  { name: "José Manuel Larroy Calvo", job: "Presidente" },
-  { name: "Juan Quílez Montañés", job: "Vicepresidente" },
-  { name: "Ángel Ordovás Soriano", job: "Secretario" },
-  { name: "Pedro Oliván Ferrando", job: "Tesorero" },
-  { name: "Carlos Ezquerro Ibarra", job: "Piragüismo" },
-  { name: "Carlos Belled Lacasa", job: "Remo" },
-  { name: "Ignacio Martínez Bermejo", job: "Salvamento Y Socorrismo" },
-];
+// const Team = [
+//   { name: "José Manuel Larroy Calvo", job: "Presidente" },
+//   { name: "Juan Quílez Montañés", job: "Vicepresidente" },
+//   { name: "Ángel Ordovás Soriano", job: "Secretario" },
+//   { name: "Pedro Oliván Ferrando", job: "Tesorero" },
+//   { name: "Carlos Ezquerro Ibarra", job: "Piragüismo" },
+//   { name: "Carlos Belled Lacasa", job: "Remo" },
+//   { name: "Ignacio Martínez Bermejo", job: "Salvamento Y Socorrismo" },
+// ];
 
-function OutTeam() {
+function OutTeam({ team }) {
   return (
     <section
       data-aos="fade-up"
@@ -31,12 +31,13 @@ function OutTeam() {
           </p>
         </div>
         <div className="flex flex-wrap -m-2">
-          {Team.map((person, i) => {
+          {team.map((person, i) => {
             return (
               <TeamCard
                 key={`person-${i}`}
-                person={person.name}
-                job={person.job}
+                person={person.attributes.Nombre}
+                job={person.attributes.Puesto}
+                social={person.attributes.socialmedia}
               />
             );
           })}

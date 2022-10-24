@@ -9,7 +9,7 @@ import About from "../components/About";
 
 import useScrollSmooth from "../hooks/useScrollSmooth";
 
-export default function Home({ latestPosts, sports }) {
+export default function Home({ latestPosts, sports, bg, heroLogo }) {
   const router = useRouter();
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Home({ latestPosts, sports }) {
       </Head>
 
       <main>
-        <Hero />
+        <Hero fondo={bg} heroLogo={heroLogo} />
         <About link={true} />
         <Gallery images={sports} />
         <News posts={latestPosts} loadMore={false} />
@@ -49,10 +49,23 @@ export async function getStaticProps() {
       )
     ).json();
 
+    const fondo = await (
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BASEURL}/api/background?populate=*`
+      )
+    ).json();
+    const heroLogo = await (
+      await fetch(
+        `${process.env.NEXT_PUBLIC_BASEURL}/api/hero-logo?populate=*`
+      )
+    ).json();
+
     return {
       props: {
         latestPosts: latestPosts.data,
         sports: sports.data,
+        bg: fondo.data,
+        heroLogo: heroLogo.data,
       },
     };
   } catch (err) {
