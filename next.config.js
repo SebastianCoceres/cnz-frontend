@@ -5,6 +5,13 @@ const nextConfig = {
   images: {
     domains: ["http://admin.clubnauticozaragoza.com:1337"],
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "http://admin.clubnauticozaragoza.com",
+        port: "1337",
+      },
+    ],
   },
 };
 
