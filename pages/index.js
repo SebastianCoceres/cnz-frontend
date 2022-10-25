@@ -54,10 +54,9 @@ export async function getStaticProps() {
         `${process.env.NEXT_PUBLIC_BASEURL}/api/background?populate=*`
       )
     ).json();
+
     const heroLogo = await (
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BASEURL}/api/hero-logo?populate=*`
-      )
+      await fetch(`${process.env.NEXT_PUBLIC_BASEURL}/api/hero-logo?populate=*`)
     ).json();
 
     return {
@@ -70,5 +69,6 @@ export async function getStaticProps() {
     };
   } catch (err) {
     console.error(err);
+    return { props: {} };
   }
 }

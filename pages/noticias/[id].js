@@ -106,7 +106,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   try {
-    const res = await fetch("admin.clubnauticozaragoza.com:1337/api/posts");
+    const res = await fetch("http://admin.clubnauticozaragoza.com:1337/api/posts");
     const newsList = await res.json();
 
     const paths = newsList.data.map((news) => {

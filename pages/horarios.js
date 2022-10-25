@@ -6,6 +6,13 @@ function Horarios({ sports }) {
   let sportsToCalendar = sports.filter((el) => {
     return el.attributes.calendario.length > 0;
   });
+  function cmp(x, y) {
+    return x > y ? 1 : x < y ? -1 : 0;
+  }
+
+  sportsToCalendar.sort(function (a, b) {
+    return cmp(b.attributes.calendario.length, a.attributes.calendario.length);
+  });
 
   return (
     <section className="section-container container mx-auto py-48 w-full ">

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import useScrollSmooth from "../hooks/useScrollSmooth";
-import Banderin from "../public/Banderin.png";
 
 function Hero({ fondo, heroLogo }) {
   return (
