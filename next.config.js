@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["http://localhost:1337"],
+    domains: ["http://admin.clubnauticozaragoza.com:1337"],
     unoptimized: true,
   },
 };
