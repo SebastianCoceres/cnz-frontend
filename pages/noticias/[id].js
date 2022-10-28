@@ -102,7 +102,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const res = await fetch(
-    "http://localhost:1337/api/posts"
+    "http://217.160.207.237:1337/api/posts"
   );
   const newsList = await res.json();
 
