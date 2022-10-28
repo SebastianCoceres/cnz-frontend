@@ -12,8 +12,6 @@ function NewsPage({ article }) {
     `src="${process.env.NEXT_PUBLIC_BASEURL}/uploads`
   );
 
-  console.log(article);
-
   return (
     <main className="container mx-auto py-24 px-4 md:px-8">
       <section className="text-gray-600 body-font">
@@ -55,9 +53,10 @@ function NewsPage({ article }) {
                     <div className="flex flex-wrap">
                       {el.horarios.data.map((hora, i) => {
                         return (
-                          <span key={`horaDeporte-${i}`} className="text-[.8em] inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md">{`${useFormatTime(
-                            hora.attributes.Hora
-                          )}`}</span>
+                          <span
+                            key={`horaDeporte-${i}`}
+                            className="text-[.8em] inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md"
+                          >{`${useFormatTime(hora.attributes.Hora)}`}</span>
                         );
                       })}
                     </div>
@@ -99,38 +98,30 @@ function NewsPage({ article }) {
 export default NewsPage;
 
 export async function getStaticProps({ params }) {
-  try {
-    const sport = await (
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/${params.id}?populate=deep`
-      )
-    ).json();
+  const sport = await (
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/${params.id}?populate=deep`
+    )
+  ).json();
 
-    return {
-      props: {
-        article: sport.data.attributes,
-      },
-    };
-  } catch (err) {
-    console.error(err);
-  }
+  return {
+    props: {
+      article: sport.data.attributes,
+    },
+  };
 }
 
 export async function getStaticPaths() {
-  try {
-    const sportList = await (
-      await fetch("http://admin.clubnauticozaragoza.com:1337/api/sports")
-    ).json();
+  const sportList = await (
+    await fetch("http://localhost:1337/api/sports")
+  ).json();
 
-    const paths = sportList.data.map((sport) => {
-      return { params: { id: sport.id.toString() } };
-    });
+  const paths = sportList.data.map((sport) => {
+    return { params: { id: sport.id.toString() } };
+  });
 
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (err) {
-    console.error(err);
-  }
+  return {
+    paths,
+    fallback: false,
+  };
 }

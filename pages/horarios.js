@@ -68,18 +68,14 @@ function Horarios({ sports }) {
 export default Horarios;
 
 export async function getStaticProps() {
-  try {
-    const sports = await (
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/?populate[calendario][populate]=%2A`
-      )
-    ).json();
-    return {
-      props: {
-        sports: sports.data,
-      },
-    };
-  } catch (err) {
-    console.error(err);
-  }
+  const sports = await (
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/?populate[calendario][populate]=%2A`
+    )
+  ).json();
+  return {
+    props: {
+      sports: sports.data,
+    },
+  };
 }

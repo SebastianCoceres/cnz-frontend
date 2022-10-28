@@ -80,18 +80,14 @@ function News({ posts, meta, title = "Noticias CNZ", loadMore = true }) {
 export default News;
 
 export async function getStaticProps() {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&sort[0]=publishedAt%3Adesc&pagination[page]=1&pagination[pageSize]=${PAGESIZE}`
-    );
-    const posts = await res.json();
-    return {
-      props: {
-        posts: posts.data,
-        meta: posts.meta,
-      },
-    };
-  } catch (err) {
-    console.error(err);
-  }
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&sort[0]=publishedAt%3Adesc&pagination[page]=1&pagination[pageSize]=${PAGESIZE}`
+  );
+  const posts = await res.json();
+  return {
+    props: {
+      posts: posts.data,
+      meta: posts.meta,
+    },
+  };
 }

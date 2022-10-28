@@ -37,38 +37,31 @@ export default function Home({ latestPosts, sports, bg, heroLogo }) {
 }
 
 export async function getStaticProps() {
-  try {
-    const latestPosts = await (
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
-      )
-    ).json();
-    const sports = await (
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
-      )
-    ).json();
+  const latestPosts = await (
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
+    )
+  ).json();
+  const sports = await (
+    await fetch(
+      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
+    )
+  ).json();
 
-    const fondo = await (
-      await fetch(
-        `${process.env.NEXT_PUBLIC_BASEURL}/api/background?populate=*`
-      )
-    ).json();
+  const fondo = await (
+    await fetch(`${process.env.NEXT_PUBLIC_BASEURL}/api/background?populate=*`)
+  ).json();
 
-    const heroLogo = await (
-      await fetch(`${process.env.NEXT_PUBLIC_BASEURL}/api/hero-logo?populate=*`)
-    ).json();
+  const heroLogo = await (
+    await fetch(`${process.env.NEXT_PUBLIC_BASEURL}/api/hero-logo?populate=*`)
+  ).json();
 
-    return {
-      props: {
-        latestPosts: latestPosts.data,
-        sports: sports.data,
-        bg: fondo.data,
-        heroLogo: heroLogo.data,
-      },
-    };
-  } catch (err) {
-    console.error(err);
-    return { props: {} };
-  }
+  return {
+    props: {
+      latestPosts: latestPosts.data,
+      sports: sports.data,
+      bg: fondo.data,
+      heroLogo: heroLogo.data,
+    },
+  };
 }

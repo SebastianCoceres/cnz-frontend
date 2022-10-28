@@ -12,7 +12,8 @@ function News({ sports, title = "Secciones deportivas" }) {
             </h1>
           </div>
           <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
-            Conoce todo las actividades que puedes realizar en nuestas instalaciones
+            Conoce todo las actividades que puedes realizar en nuestas
+            instalaciones
           </p>
         </div>
         <div className="sportCard__container flex flex-wrap -mx-4">
@@ -29,20 +30,16 @@ function News({ sports, title = "Secciones deportivas" }) {
 export default News;
 
 export async function getStaticProps() {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=*`
-    );
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=*`
+  );
 
-    const sports = await res.json();
+  const sports = await res.json();
 
-    return {
-      props: {
-        sports: sports.data,
-        meta: sports.meta,
-      },
-    };
-  } catch (err) {
-    console.error(err);
-  }
+  return {
+    props: {
+      sports: sports.data,
+      meta: sports.meta,
+    },
+  };
 }

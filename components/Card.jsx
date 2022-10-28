@@ -16,7 +16,7 @@ function Card({ postData, aosDelay = 0 }) {
         <figure className="h-40 rounded md:w-1/3 xl:w-full aspect-square  mb-6 relative">
           <Image
             src={`${process.env.NEXT_PUBLIC_BASEURL}${postData.attributes.portrait.data.attributes.url}`}
-            className="object-cover object-center lg:group-hover:scale-125 transition-all duration-1000"
+            className="object-cover object-center lg:group-hover:scale-110 transition-all duration-1000"
             layout="fill"
           />
         </figure>
@@ -25,7 +25,7 @@ function Card({ postData, aosDelay = 0 }) {
             <h3 className="tracking-widest text-indigo-600 text-xs font-medium title-font mb-2">
               {useFormatDate(postData.attributes.publishedAt)}
             </h3>
-            <h2 className="text-lg text-gray-900 font-medium title-font mb-4 group-hover:text-red-500">
+            <h2 className="text-lg text-gray-900 font-medium title-font mb-4">
               {postData.attributes.title}
               {postData.attributes.Icon}
             </h2>

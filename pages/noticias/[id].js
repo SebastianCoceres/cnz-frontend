@@ -81,43 +81,37 @@ function NewsPage({ article, latestPosts }) {
 export default NewsPage;
 
 export async function getStaticProps({ params }) {
-  try {
-    const newsRes = await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/posts/${params.id}?populate=*`
-    );
-    const news = await newsRes.json();
+  const newsRes = await fetch(
+    `${process.env.NEXT_PUBLIC_BASEURL}/api/posts/${params.id}?populate=*`
+  );
+  const news = await newsRes.json();
 
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc&filters[id][$ne]=${params.id}`
-    );
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc&filters[id][$ne]=${params.id}`
+  );
 
-    const latestPosts = await res.json();
+  const latestPosts = await res.json();
 
-    return {
-      props: {
-        article: news.data.attributes,
-        latestPosts: latestPosts.data,
-      },
-    };
-  } catch (err) {
-    console.error(err);
-  }
+  return {
+    props: {
+      article: news.data.attributes,
+      latestPosts: latestPosts.data,
+    },
+  };
 }
 
 export async function getStaticPaths() {
-  try {
-    const res = await fetch("http://admin.clubnauticozaragoza.com:1337/api/posts");
-    const newsList = await res.json();
+  const res = await fetch(
+    "http://localhost:1337/api/posts"
+  );
+  const newsList = await res.json();
 
-    const paths = newsList.data.map((news) => {
-      return { params: { id: news.id.toString() } };
-    });
+  const paths = newsList.data.map((news) => {
+    return { params: { id: news.id.toString() } };
+  });
 
-    return {
-      paths,
-      fallback: false,
-    };
-  } catch (err) {
-    console.error(err);
-  }
+  return {
+    paths,
+    fallback: false,
+  };
 }
