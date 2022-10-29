@@ -10,9 +10,26 @@ function Horarios({ sports }) {
     return x > y ? 1 : x < y ? -1 : 0;
   }
 
+  function getObjectPropAmount(obj, prop) {
+    let count = 0;
+    obj.forEach((el) => {
+      count += el[prop].data.length;
+    });
+
+    return count;
+  }
+
   sportsToCalendar.sort(function (a, b) {
-    return cmp(b.attributes.calendario.length, a.attributes.calendario.length);
+    return (
+      cmp(b.attributes.calendario.length, a.attributes.calendario.length) ||
+      cmp(
+        getObjectPropAmount(b.attributes.calendario, "horarios"),
+        getObjectPropAmount(a.attributes.calendario, "horarios")
+      )
+    );
   });
+
+  console.log(sportsToCalendar);
 
   return (
     <section className="section-container container mx-auto py-48 w-full ">

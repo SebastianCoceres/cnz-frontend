@@ -113,7 +113,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const sportList = await (
-    await fetch("http://217.160.207.237:1337/api/sports")
+    await fetch("http://localhost:1337/api/sports")
   ).json();
 
   const paths = sportList.data.map((sport) => {
