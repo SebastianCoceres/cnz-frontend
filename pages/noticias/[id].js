@@ -2,6 +2,7 @@ import React from "react";
 import useFormatDate from "../../hooks/useFormateDate";
 import News from ".";
 import DOMPurify from "isomorphic-dompurify";
+import fetch from "isomorphic-fetch";
 import FileImage from "../../components/FileImage";
 import Link from "next/link";
 
@@ -101,9 +102,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    "http://217.160.207.237:1337/api/posts"
-  );
+  const res = await fetch("http://217.160.207.237:1337/api/posts");
   const newsList = await res.json();
 
   const paths = newsList.data.map((news) => {
