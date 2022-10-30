@@ -34,62 +34,63 @@ function NewsPage({ article }) {
             ></article>
           </div>
         </div>
-
-        {article.calendario.length > 0 && (
-          <section>
-            <h3 className="text-2xl font-bold mt-2 mb-4">Horarios</h3>
-            <hr className="my-4" />
-            <ul>
-              {article.calendario.map((el, i) => {
-                return (
-                  <li
-                    key={`diaDeporte-${i}`}
-                    className="mb-4 w-full flex flex-wrap items-center
+        <div className="flex flex-wrap lg:-mx-4">
+          {article.calendario.length > 0 && (
+            <section className="w-full lg:w-1/2 lg:px-4">
+              <h3 className="text-2xl font-bold mt-2 mb-4">Horarios</h3>
+              <hr className="my-4" />
+              <ul>
+                {article.calendario.map((el, i) => {
+                  return (
+                    <li
+                      key={`diaDeporte-${i}`}
+                      className="mb-4 w-full flex flex-wrap items-center
                   "
-                  >
-                    <span className="font-bold w-full lg:w-[5em] block mr-4 mb-2 text-xl ">
-                      {el.dias.data[0].attributes.dias}:
-                    </span>
-                    <div className="flex flex-wrap">
-                      {el.horarios.data.map((hora, i) => {
-                        return (
-                          <span
-                            key={`horaDeporte-${i}`}
-                            className="text-[.8em] inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md"
-                          >{`${useFormatTime(hora.attributes.Hora)}`}</span>
-                        );
-                      })}
+                    >
+                      <span className="font-bold w-full lg:w-[5em] block mr-4 mb-2 text-xl ">
+                        {el.dias.data[0].attributes.dias}:
+                      </span>
+                      <div className="flex flex-wrap">
+                        {el.horarios.data.map((hora, i) => {
+                          return (
+                            <span
+                              key={`horaDeporte-${i}`}
+                              className="text-[.8em] inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md"
+                            >{`${useFormatTime(hora.attributes.Hora)}`}</span>
+                          );
+                        })}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          )}
+          {article.news.data.length > 0 && (
+            <section className="w-full lg:w-1/2 my-16 lg:my-0 lg:px-4">
+              <h3 className="text-2xl font-bold pb-2">Noticias relacionadas</h3>
+              <div className="flex flex-wrap w-full">
+                {article.news.data.map((el) => {
+                  return (
+                    <div className="w-full">
+                      <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between h-full">
+                        <Link href={`/noticias/${el.id}`}>
+                          <a className="text-xl flex items-center ">
+                            <FaAngleRight className="hidden md:inline-block" />
+                            {el.attributes.title}
+                          </a>
+                        </Link>
+                        <small className="text-xs text-gray-500 md:ml-4">
+                          ({useFormatDate(el.attributes.publishedAt)})
+                        </small>
+                      </div>
                     </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        )}
-        {article.news.data.length > 0 && (
-          <div className="my-16">
-            <h3 className="text-2xl font-bold pb-2">Noticias relacionadas</h3>
-            <div className="flex flex-wrap -m-2">
-              {article.news.data.map((el) => {
-                return (
-                  <div className="w-full lg:w-1/2 p-2">
-                    <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between h-full">
-                      <Link href={`/noticias/${el.id}`}>
-                        <a className="text-xl flex items-center ">
-                          <FaAngleRight className="hidden md:inline-block" />
-                          {el.attributes.title}
-                        </a>
-                      </Link>
-                      <small className="text-xs text-gray-500 md:ml-4">
-                        ({useFormatDate(el.attributes.publishedAt)})
-                      </small>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
+                  );
+                })}
+              </div>
+            </section>
+          )}
+        </div>
       </section>
     </main>
   );
@@ -113,7 +114,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const sportList = await (
-    await fetch("http://localhost:1337/api/sports")
+    await fetch("http://admin.clubnauticozaragoza.com:1337/api/sports")
   ).json();
 
   const paths = sportList.data.map((sport) => {
