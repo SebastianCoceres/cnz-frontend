@@ -6,6 +6,7 @@ import Gallery from "../components/Gallery";
 import Location from "../components/Location";
 import News from "./noticias";
 import About from "../components/About";
+import fondo from "../public/fondo.jpg";
 
 import useScrollSmooth from "../hooks/useScrollSmooth";
 
@@ -26,7 +27,7 @@ export default function Home({ latestPosts, sports, bg, heroLogo }) {
       </Head>
 
       <main>
-        <Hero fondo={bg} heroLogo={heroLogo} />
+        <Hero fondo={bg ? bg : fondo} heroLogo={heroLogo} />
         <About link={true} />
         <Gallery images={sports} />
         <News posts={latestPosts} loadMore={false} />

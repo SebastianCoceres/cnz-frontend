@@ -3,13 +3,13 @@ import ImgGallery from "./ImgGallery";
 import instalacion1 from "../public/assets/sala-ebro.JPG";
 import instalacion2 from "../public/assets/instalaciones-1.jpg";
 import instalacion3 from "../public/assets/instalaciones-2.jpg";
-import instalacion4 from "../public/assets/almacen.JPG";
+import instalacion4 from "../public/assets/hangar.JPG";
 
 let photos = [
   { url: instalacion1.src, title: "Sala Ebro" },
   { url: instalacion2.src, title: "Gimnasio" },
   { url: instalacion3.src, title: "Gimnasio" },
-  { url: instalacion4.src, title: "Almacén" },
+  { url: instalacion4.src, title: "Hangar" },
 ];
 
 function Intalaciones() {
