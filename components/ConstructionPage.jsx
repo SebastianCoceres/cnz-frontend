@@ -4,9 +4,9 @@ import logo from "../public/Logo.png";
 function ConstructionPage() {
   return (
     <section className="flex justify-center items-center h-screen w-screen bg-gray-900 text-white">
-      <div className="text-center flex flex-col items-center">
+      <div className="text-center flex flex-col justify-center items-center">
         <img
-          className="w-[30em] h-[30em]"
+          className="w-[30em] h-[30em] object-contain"
           src={logo.src}
           alt="Club náutico de Zaragoza"
         />
