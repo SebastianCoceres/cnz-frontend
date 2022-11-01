@@ -87,7 +87,7 @@ export default Horarios;
 export async function getStaticProps() {
   const sports = await (
     await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/?populate[calendario][populate]=%2A`
+      `${process.env.NEXT_PUBLIC_APIURL}/sports/?populate[calendario][populate]=%2A`
     )
   ).json();
   return {

@@ -15,7 +15,7 @@ export default function sobreNostros({ teamData }) {
 
 export async function getStaticProps() {
   const team = await (
-    await fetch(`${process.env.NEXT_PUBLIC_BASEURL}/api/equipos?populate=*`)
+    await fetch(`${process.env.NEXT_PUBLIC_APIURL}/equipos?populate=*`)
   ).json();
 
   return {

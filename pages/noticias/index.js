@@ -22,7 +22,7 @@ function News({ posts, meta, title = "Noticias CNZ", loadMore = true }) {
     setLoading(true);
     let pageCount = page + 1;
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&sort[0]=publishedAt%3Adesc&pagination[page]=${pageCount}&pagination[pageSize]=${PAGESIZE}`
+      `${process.env.NEXT_PUBLIC_APIURL}/posts?populate=*&sort[0]=publishedAt%3Adesc&pagination[page]=${pageCount}&pagination[pageSize]=${PAGESIZE}`
     );
     const posts = await res.json();
     pageSetter(pageCount);
@@ -81,7 +81,7 @@ export default News;
 
 export async function getStaticProps() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&sort[0]=publishedAt%3Adesc&pagination[page]=1&pagination[pageSize]=${PAGESIZE}`
+    `${process.env.NEXT_PUBLIC_APIURL}/posts?populate=*&sort[0]=publishedAt%3Adesc&pagination[page]=1&pagination[pageSize]=${PAGESIZE}`
   );
   const posts = await res.json();
   return {

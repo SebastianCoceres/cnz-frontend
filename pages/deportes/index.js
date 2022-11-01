@@ -31,7 +31,7 @@ export default News;
 
 export async function getStaticProps() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=*`
+    `${process.env.NEXT_PUBLIC_APIURL}/sports?populate=*`
   );
 
   const sports = await res.json();

@@ -101,7 +101,7 @@ export default NewsPage;
 export async function getStaticProps({ params }) {
   const sport = await (
     await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports/${params.id}?populate=deep`
+      `${process.env.NEXT_PUBLIC_APIURL}/sports/${params.id}?populate=deep`
     )
   ).json();
 
@@ -114,7 +114,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const sportList = await (
-    await fetch("http://admin.clubnauticozaragoza.com:1337/api/sports")
+    await fetch("https://api.clubnauticozaragoza.com/sports")
   ).json();
 
   const paths = sportList.data.map((sport) => {

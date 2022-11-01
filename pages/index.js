@@ -40,21 +40,21 @@ export default function Home({ latestPosts, sports, bg, heroLogo }) {
 export async function getStaticProps() {
   const latestPosts = await (
     await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
+      `${process.env.NEXT_PUBLIC_APIURL}/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc`
     )
   ).json();
   const sports = await (
     await fetch(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
+      `${process.env.NEXT_PUBLIC_APIURL}/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
     )
   ).json();
 
   const fondo = await (
-    await fetch(`${process.env.NEXT_PUBLIC_BASEURL}/api/background?populate=*`)
+    await fetch(`${process.env.NEXT_PUBLIC_APIURL}/background?populate=*`)
   ).json();
 
   const heroLogo = await (
-    await fetch(`${process.env.NEXT_PUBLIC_BASEURL}/api/hero-logo?populate=*`)
+    await fetch(`${process.env.NEXT_PUBLIC_APIURL}/hero-logo?populate=*`)
   ).json();
 
   return {

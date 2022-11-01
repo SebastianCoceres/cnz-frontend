@@ -83,12 +83,12 @@ export default NewsPage;
 
 export async function getStaticProps({ params }) {
   const newsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/posts/${params.id}?populate=*`
+    `${process.env.NEXT_PUBLIC_BASEURL}/posts/${params.id}?populate=*`
   );
   const news = await newsRes.json();
 
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/api/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc&filters[id][$ne]=${params.id}`
+    `${process.env.NEXT_PUBLIC_APIURL}/posts?populate=*&pagination[pageSize]=3&sort[0]=publishedAt%3Adesc&filters[id][$ne]=${params.id}`
   );
 
   const latestPosts = await res.json();
@@ -102,7 +102,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("http://admin.clubnauticozaragoza.com:1337/api/posts");
+  const res = await fetch("https://api.clubnauticozaragoza.com/posts");
   const newsList = await res.json();
 
   const paths = newsList.data.map((news) => {
