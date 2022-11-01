@@ -83,7 +83,7 @@ export default NewsPage;
 
 export async function getStaticProps({ params }) {
   const newsRes = await fetch(
-    `${process.env.NEXT_PUBLIC_BASEURL}/posts/${params.id}?populate=*`
+    `${process.env.NEXT_PUBLIC_APIURL}/posts/${params.id}?populate=*`
   );
   const news = await newsRes.json();
 
