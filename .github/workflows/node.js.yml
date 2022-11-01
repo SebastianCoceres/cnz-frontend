@@ -9,6 +9,7 @@ on:
 
 env:
   NEXT_PUBLIC_BASEURL: ${{secrets.NEXT_PUBLIC_BASEURL}}
+  NEXT_PUBLIC_APIURL: ${{secrets.NEXT_PUBLIC_APIURL}}
 
 jobs:
   build:
