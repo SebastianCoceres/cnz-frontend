@@ -11,7 +11,7 @@ function About({ link = false, aboutPage = true }) {
         aboutPage ? "container px-4" : "lg:container px-5 "
       }`}
     >
-      <div className="lg:w-4/6 mx-auto">
+      <div className="w-full lg:w-4/6 mx-auto">
         <div
           data-aos="fade-up"
           data-aos-duration="1500"
