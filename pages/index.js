@@ -28,7 +28,7 @@ export default function Home({ latestPosts, sports, bg, heroLogo }) {
 
       <main>
         <Hero fondo={bg ? bg : fondo} heroLogo={heroLogo} />
-        <About link={true} />
+        <About link={true} aboutPage={false} />
         <Gallery images={sports} />
         <News posts={latestPosts} loadMore={false} />
         <Location />

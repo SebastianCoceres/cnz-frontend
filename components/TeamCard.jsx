@@ -15,13 +15,14 @@ function TeamCard({ person, job, social }) {
           <p className="text-gray-500">{job}</p>
           {social.length > 0 && (
             <div className="flex justify-end text-2xl">
-              {social.map((sm) => {
+              {social.map((sm, i) => {
                 return (
                   <a
                     title={sm.user}
                     href={sm.url}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
+                    key={`sm-${i}`}
                   >
                     {sm.icon == "FaInstagram" && <FaInstagram />}
                     {sm.icon == "FaFacebookSquare" && <FaFacebookSquare />}

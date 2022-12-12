@@ -29,7 +29,7 @@ function Horarios({ sports }) {
     );
   });
 
-  console.log(sportsToCalendar);
+  // console.log(sportsToCalendar);
 
   return (
     <section className="section-container container mx-auto py-48 w-full ">

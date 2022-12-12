@@ -4,9 +4,13 @@ import banderin from "../public/Banderin.png";
 import Image from "next/image";
 import Link from "next/link";
 
-function About({ link = false }) {
+function About({ link = false, aboutPage = true }) {
   return (
-    <section className="section-container container px-4 mx-auto text-gray-600 body-font py-24 flex flex-col justify-center">
+    <section
+      className={`section-container py-24 mx-auto flex flex-wrap ${
+        aboutPage ? "container px-4" : "lg:container px-5 "
+      }`}
+    >
       <div className="lg:w-4/6 mx-auto">
         <div
           data-aos="fade-up"
@@ -24,7 +28,9 @@ function About({ link = false }) {
             </a>
           </Link>
         </div>
-        <div data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+      </div>
+      <div data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
+        <div className={aboutPage && "lg:w-4/6 mx-auto"}>
           <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
             Nuestra Historia
           </h2>
@@ -79,3 +85,5 @@ function About({ link = false }) {
 }
 
 export default About;
+
+// ""
