@@ -94,5 +94,6 @@ export async function getStaticProps() {
     props: {
       sports: sports.data,
     },
+    revalidate: 60,
   };
 }

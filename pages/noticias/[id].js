@@ -98,6 +98,7 @@ export async function getStaticProps({ params }) {
       article: news.data.attributes,
       latestPosts: latestPosts.data,
     },
+    revalidate: 10,
   };
 }
 
@@ -111,6 +112,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }

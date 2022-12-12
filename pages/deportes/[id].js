@@ -109,6 +109,7 @@ export async function getStaticProps({ params }) {
     props: {
       article: sport.data.attributes,
     },
+    revalidate: 60,
   };
 }
 
@@ -123,6 +124,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }

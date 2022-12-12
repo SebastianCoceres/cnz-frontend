@@ -64,5 +64,6 @@ export async function getStaticProps() {
       bg: fondo.data,
       heroLogo: heroLogo.data,
     },
+    revalidate: 60,
   };
 }
