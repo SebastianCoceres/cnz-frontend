@@ -7,7 +7,6 @@ function GalleryImg({
   aosAnimation = "fade-up",
   aosDuration = 1500,
 }) {
-  console.log(imgArryTarget);
   return (
     <figure
       data-aos={aosAnimation}

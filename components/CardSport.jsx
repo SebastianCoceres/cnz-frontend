@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 function CardSport({ sportData }) {
-  console.log(!!sportData.attributes.photolink);
   return (
     <div
       data-aos="fade-up"
