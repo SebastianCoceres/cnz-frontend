@@ -17,11 +17,19 @@ function NewsPage({ article }) {
       <section className="text-gray-600 body-font">
         <div className="flex flex-col lg:flex-row  items-start py-24 ">
           <div className="lg:max-w-lg  lg:w-1/3 xl:w-1/2 mb-4 lg:sticky top-32 ">
-            <img
-              className="object-cover object-center h-full w-full rounded-lg mb-8"
-              alt=""
-              src={`${process.env.NEXT_PUBLIC_BASEURL}${article.portrait.data.attributes.url}`}
-            />
+            {!!article.photolink ? (
+              <img
+                className="object-cover object-center h-full w-full rounded-lg mb-8"
+                alt=""
+                src={article.photolink}
+              />
+            ) : (
+              <img
+                className="object-cover object-center h-full w-full rounded-lg mb-8"
+                alt=""
+                src={`${process.env.NEXT_PUBLIC_BASEURL}${article.portrait.data.attributes.url}`}
+              />
+            )}
           </div>
           <div className="lg:flex-grow lg:w-2/3 xl:w-1/2 lg:px-8 flex flex-col md:items-start mb-16 md:mb-0 items-center">
             <h2 className="sm:text-4xl text-2xl font-bold  text-gray-900">

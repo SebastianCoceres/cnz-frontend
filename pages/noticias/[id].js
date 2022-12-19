@@ -18,11 +18,19 @@ function NewsPage({ article, latestPosts }) {
       <section className="lg:w-4/6 mx-auto">
         <header className="mb-12">
           <div className="rounded-lg h-80 overflow-hidden mb-8">
-            <img
-              alt="content"
-              className="object-cover object-center h-full w-full"
-              src={`${process.env.NEXT_PUBLIC_BASEURL}${article.portrait.data.attributes.url}`}
-            />
+            {!!article.photolink ? (
+              <img
+                className="object-cover object-center h-full w-full rounded-lg mb-8"
+                alt=""
+                src={article.photolink}
+              />
+            ) : (
+              <img
+                className="object-cover object-center h-full w-full rounded-lg mb-8"
+                alt=""
+                src={`${process.env.NEXT_PUBLIC_BASEURL}${article.portrait.data.attributes.url}`}
+              />
+            )}
           </div>
 
           <div>
@@ -112,6 +120,6 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 }
