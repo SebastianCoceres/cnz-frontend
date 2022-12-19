@@ -29,8 +29,6 @@ function Horarios({ sports }) {
     );
   });
 
-  // console.log(sportsToCalendar);
-
   return (
     <section className="section-container container mx-auto py-48 w-full ">
       <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mb-8">
@@ -51,20 +49,19 @@ function Horarios({ sports }) {
                     return (
                       <div
                         key={`dia-${i}`}
-                        className="flex flex-col lg:flex-row mb-8"
+                        className="flex flex-col lg:flex-row mb-4 lg:items-center"
                       >
-                        <span className="font-bold w-full lg:w-[5em] block mr-4 mb-2 text-xl ">
+                        <span className="font-bold w-full lg:w-[5em] block mr-4 mb-2 lg:mb-0 text-xl ">
                           {d.dias.data[0].attributes.dias}:
                         </span>
                         <ul className="flex flex-wrap items-center">
                           {d.horarios.data.map((h, i) => {
                             return (
                               <li
-                                className="inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md"
+                                className="inline-block mb-2 mr-2 lg:m-0 px-4 py-2  rounded-md"
                                 key={`horario-${i}`}
                               >
-                                {" "}
-                                {useFormateTime(h.attributes.Hora)}
+                                <span className="text-md">{useFormateTime(h.attributes.Hora)}</span>
                               </li>
                             );
                           })}

@@ -8,8 +8,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "http://admin.clubnauticozaragoza.com",
-        port: "1337",
+        hostname: "**",
       },
     ],
   },

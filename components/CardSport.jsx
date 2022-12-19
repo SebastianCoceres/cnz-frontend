@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 function CardSport({ sportData }) {
+  console.log(!!sportData.attributes.photolink);
   return (
     <div
       data-aos="fade-up"
@@ -10,11 +11,19 @@ function CardSport({ sportData }) {
       className="sportCard w-full mb-24 px-4 text-gray-600 md:flex"
     >
       <figure className="w-full rounded-lg overflow-hidden md:w-1/2 h-96">
-        <img
-          alt="content"
-          className="object-cover object-center h-full w-full "
-          src={`${process.env.NEXT_PUBLIC_BASEURL}${sportData.attributes.portrait.data.attributes.url}`}
-        />
+        {!!sportData.attributes.photolink ? (
+          <img
+            className="object-cover object-center h-full w-full rounded-lg mb-8"
+            alt=""
+            src={sportData.attributes.photolink}
+          />
+        ) : (
+          <img
+            className="object-cover object-center h-full w-full rounded-lg mb-8"
+            alt=""
+            src={`${process.env.NEXT_PUBLIC_BASEURL}${sportData.attributes.portrait.data.attributes.url}`}
+          />
+        )}
       </figure>
       <div className="flex flex-col items-start justify-center md:w-1/2">
         <h2 className="text-2xl w-full font-medium text-gray-900 mt-6 md:mt-0 mb-3">

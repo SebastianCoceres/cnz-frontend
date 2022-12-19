@@ -1,7 +1,7 @@
 import React from "react";
 import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
-import { FaAngleRight } from "react-icons/fa";
+import { FaNewspaper } from "react-icons/fa";
 import useFormatDate from "../../hooks/useFormateDate";
 import useFormatTime from "../../hooks/useFormateTime";
 
@@ -84,7 +84,7 @@ function NewsPage({ article }) {
                       <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between h-full">
                         <Link href={`/noticias/${el.id}`}>
                           <a className="text-xl flex items-center ">
-                            <FaAngleRight className="hidden md:inline-block" />
+                            <FaNewspaper className="hidden md:inline-block mr-2" />
                             {el.attributes.title}
                           </a>
                         </Link>

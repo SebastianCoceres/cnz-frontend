@@ -14,11 +14,19 @@ function Card({ postData, aosDelay = 0 }) {
     >
       <div className="bg-gray-100 p-6 rounded-lg h-full flex flex-col md:flex-row xl:flex-col">
         <figure className="h-40 rounded md:w-1/3 xl:w-full aspect-square  mb-6 relative">
-          <Image
-            src={`${process.env.NEXT_PUBLIC_BASEURL}${postData.attributes.portrait.data.attributes.url}`}
-            className="object-cover object-center lg:group-hover:scale-110 transition-all duration-1000"
-            layout="fill"
-          />
+          {!!postData.attributes.photolink ? (
+            <img
+              className="object-cover object-center h-full w-full rounded-lg mb-8"
+              alt=""
+              src={article.photolink}
+            />
+          ) : (
+            <img
+              className="object-cover object-center h-full w-full rounded-lg mb-8"
+              alt=""
+              src={`${process.env.NEXT_PUBLIC_BASEURL}${postData.attributes.portrait.data.attributes.url}`}
+            />
+          )}
         </figure>
         <div className="flex flex-col justify-between flex-grow px-4 xl:px-0 md:w-2/3 xl:w-full">
           <div>
