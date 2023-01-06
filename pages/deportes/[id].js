@@ -156,7 +156,7 @@ export async function getStaticProps({ params }) {
       props: {
         article: sport.data.attributes,
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (err) {
     return {
