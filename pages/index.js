@@ -78,7 +78,7 @@ export async function getStaticProps() {
         bg: fondo.data,
         heroLogo: heroLogo.data,
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (err) {
     return {

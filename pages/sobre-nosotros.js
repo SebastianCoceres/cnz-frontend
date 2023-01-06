@@ -42,7 +42,7 @@ export async function getStaticProps() {
       props: {
         teamData: team.data,
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (err) {
     return {

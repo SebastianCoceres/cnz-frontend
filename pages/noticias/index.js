@@ -128,7 +128,7 @@ export async function getStaticProps() {
         posts: posts.data,
         meta: posts.meta,
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (err) {
     return {

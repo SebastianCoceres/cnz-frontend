@@ -62,7 +62,7 @@ export async function getStaticProps() {
         sports: sports.data,
         meta: sports.meta,
       },
-      revalidate: 60,
+      revalidate: 10,
     };
   } catch (err) {
     return {
