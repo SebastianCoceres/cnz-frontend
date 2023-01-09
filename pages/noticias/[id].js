@@ -6,6 +6,7 @@ import fetch from "isomorphic-fetch";
 import FileImage from "../../components/FileImage";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 
 function NewsPage({ article, latestPosts }) {
   if (!article) {
@@ -20,6 +21,7 @@ function NewsPage({ article, latestPosts }) {
   return (
     <>
       <Head>
+        <html lang="es" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -31,20 +33,22 @@ function NewsPage({ article, latestPosts }) {
       </Head>
 
       <main className="container mx-auto py-24 px-4 md:px-8">
-        <section className="lg:w-4/6 mx-auto">
+        <section className="lg:max-w-4xl mx-auto">
           <header className="mb-12">
-            <div className="rounded-lg h-80 overflow-hidden mb-8">
+            <div className="rounded-lg aspect-[2/1] lg:aspect-[3/1] overflow-hidden mb-8 relative">
               {!!article.photolink ? (
-                <img
-                  className="object-cover object-center h-full w-full rounded-lg mb-8"
+                <Image
+                  className="object-cover rounded-lg mb-8"
                   alt=""
                   src={article.photolink}
+                  layout="fill"
                 />
               ) : (
-                <img
-                  className="object-cover object-center h-full w-full rounded-lg mb-8"
+                <Image
+                  className="object-cover rounded-lg mb-8"
                   alt=""
                   src={`${process.env.NEXT_PUBLIC_BASEURL}${article.portrait.data.attributes.url}`}
+                  layout="fill"
                 />
               )}
             </div>

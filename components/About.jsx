@@ -22,6 +22,7 @@ function About({ link = false, aboutPage = true }) {
             <a className="relative block w-full h-full">
               <Image
                 src={exteriorClub.src}
+                alt="Vista exterior del club del lado del río"
                 layout="fill"
                 className="object-cover"
               />
@@ -39,6 +40,7 @@ function About({ link = false, aboutPage = true }) {
               <div className="relative w-32 h-32 rounded-full inline-flex items-center justify-center">
                 <Image
                   src={banderin}
+                  alt=""
                   layout="fill"
                   className="object-contain"
                 />

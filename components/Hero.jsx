@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import useScrollSmooth from "../hooks/useScrollSmooth";
 
 function Hero({ fondo, heroLogo }) {
@@ -23,11 +24,12 @@ function Hero({ fondo, heroLogo }) {
         className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 flex h-screen items-center justify-center md:justify-start lg:px-8"
       >
         <div className="max-w-xl text-center sm:text-left">
-          <figure className="flex justify-center">
-            <img
+          <figure className="flex justify-center relative w-40 h-40 mx-auto">
+            <Image
               src={`${process.env.NEXT_PUBLIC_BASEURL}${heroLogo.attributes.image.data.attributes.url}`}
               alt=""
-              className="w-40 h-40 object-contain"
+              className=" object-contain"
+              layout="fill"
             />
           </figure>
           <h1 className="text-3xl font-extrabold sm:text-5xl text-white">

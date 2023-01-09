@@ -21,7 +21,7 @@ function Navbar() {
                 setMenuOpen(false);
               }}
             >
-              <Image src={logo} layout="fixed" width={30} height={30} />
+              <Image src={logo} alt="Logo del Club Náutico Zaragoza" layout="fixed" width={30} height={30} />
 
               <h1 className="ml-3 text-xl">Club Náutico Zaragoza</h1>
             </a>
@@ -33,6 +33,7 @@ function Navbar() {
             }}
           >
             <FaBars />
+            <span className="sr-only">Menú</span>
           </button>
         </div>
         <nav

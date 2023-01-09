@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function GalleryImg({
   gridSize,
@@ -15,18 +16,20 @@ function GalleryImg({
       className={`relative ${gridSize}`}
     >
       <Link href={`./deportes/${imgArryTarget?.id}`}>
-        <a>
+        <a className="block h-full w-full">
           {!!imgArryTarget.attributes.photolink ? (
-            <img
+            <Image
               className="object-cover object-center h-full w-full rounded-lg mb-8"
-              alt=""
+              alt={imgArryTarget?.attributes.title}
               src={imgArryTarget?.attributes.photolink}
+              layout="fill"
             />
           ) : (
-            <img
+            <Image
               className="object-cover object-center h-full w-full rounded-lg mb-8"
-              alt=""
+              alt={imgArryTarget?.attributes.title}
               src={`${process.env.NEXT_PUBLIC_BASEURL}${imgArryTarget?.attributes.portrait.data.attributes.url}`}
+              layout="fill"
             />
           )}
           <figcaption className=" text-lg  font-bold absolute inset-0 w-full p-4 transition bg-gradient-to-t from-black/50 to-transparent flex items-end">

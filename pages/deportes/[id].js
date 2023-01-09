@@ -6,6 +6,7 @@ import useFormatDate from "../../hooks/useFormateDate";
 import useFormatTime from "../../hooks/useFormateTime";
 import Custom404 from "../404";
 import Head from "next/head";
+import Image from "next/image";
 
 function NewsPage({ article }) {
   if (!article) {
@@ -20,6 +21,7 @@ function NewsPage({ article }) {
   return (
     <>
       <Head>
+        <html lang="es" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -32,18 +34,20 @@ function NewsPage({ article }) {
       <main className="container mx-auto py-24 px-4 md:px-8">
         <section className="text-gray-600 body-font">
           <div className="flex flex-col lg:flex-row  items-start py-24 ">
-            <div className="lg:max-w-lg  lg:w-1/3 xl:w-1/2 mb-4 lg:sticky top-32 ">
+            <div className="w-full lg:w-1/3 mb-4 lg:sticky lg:top-32 relative aspect-square">
               {!!article.photolink ? (
-                <img
-                  className="object-cover object-center h-full w-full rounded-lg mb-8"
+                <Image
+                  className="object-cover rounded-lg mb-8"
                   alt=""
                   src={article.photolink}
+                  layout="fill"
                 />
               ) : (
-                <img
-                  className="object-cover object-center h-full w-full rounded-lg mb-8"
+                <Image
+                  className="object-cover rounded-lg mb-8"
                   alt=""
                   src={`${process.env.NEXT_PUBLIC_BASEURL}${article.portrait.data.attributes.url}`}
+                  layout="fill"
                 />
               )}
             </div>

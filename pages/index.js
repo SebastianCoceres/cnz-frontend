@@ -11,7 +11,8 @@ import fondo from "../public/fondo.jpg";
 import useScrollSmooth from "../hooks/useScrollSmooth";
 
 const title = "Club Náutico Zaragoza";
-const descriptionIndex = "";
+const descriptionIndex =
+  "Inaugurado en 1964, el Club Náutico de Zaragoza es una Asociación Deportiva Básica, con Nº Reg. 979/01 , inscrita en elregistro general de asociaciones deportivas del Gobierno de Aragón";
 
 export default function Home({ latestPosts, sports, bg, heroLogo }) {
   if (!latestPosts && !sports) {
@@ -28,6 +29,7 @@ export default function Home({ latestPosts, sports, bg, heroLogo }) {
   return (
     <div>
       <Head>
+        <html lang="es" /> 
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />

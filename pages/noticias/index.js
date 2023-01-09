@@ -48,6 +48,7 @@ function News({ posts, meta, title = "Noticias CNZ", loadMore = true }) {
     <>
       {router.asPath == "/noticias" && (
         <Head>
+          <html lang="es" /> 
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta

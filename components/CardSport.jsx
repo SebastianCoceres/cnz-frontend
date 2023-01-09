@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 function CardSport({ sportData }) {
   return (
@@ -9,18 +10,20 @@ function CardSport({ sportData }) {
       data-aos-once="true"
       className="sportCard w-full mb-24 px-4 text-gray-600 md:flex"
     >
-      <figure className="w-full rounded-lg overflow-hidden md:w-1/2 h-96">
+      <figure className="w-full rounded-lg overflow-hidden md:w-1/2 h-96 relative">
         {!!sportData.attributes.photolink ? (
-          <img
+          <Image
             className="object-cover object-center h-full w-full rounded-lg mb-8"
             alt=""
             src={sportData.attributes.photolink}
+            layout="fill"
           />
         ) : (
-          <img
+          <Image
             className="object-cover object-center h-full w-full rounded-lg mb-8"
             alt=""
             src={`${process.env.NEXT_PUBLIC_BASEURL}${sportData.attributes.portrait.data.attributes.url}`}
+            layout="fill"
           />
         )}
       </figure>

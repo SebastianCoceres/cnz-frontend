@@ -21,7 +21,7 @@ function Gallery({ images }) {
       </div>
       <div className="flex flex-wrap w-full">
         {images.length > 0 && (
-          <div className="grid grid-cols-4 gap-4 grid-flow-row auto-rows-[15em] text-white overflow-hidden">
+          <div className="w-full grid grid-cols-4 gap-4 grid-flow-row auto-rows-[15em] text-white overflow-hidden">
             <GalleryImg
               aosAnimation="fade-right"
               imgArryTarget={images[0]}

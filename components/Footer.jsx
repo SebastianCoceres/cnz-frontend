@@ -5,7 +5,7 @@ import Link from "next/link";
 function Footer() {
   return (
     <footer className="text-gray-400 bg-gray-900 body-font mt-[auto]">
-      <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+      <div className="container px-5 py-8 mx-auto flex justify-between items-center sm:flex-row flex-col">
         <p className="text-sm text-gray-400 sm:py-2 sm:mt-0 mt-4 flex items-center">
           © 2022 Club Náutico Zaragoza —
           <a
@@ -15,9 +15,13 @@ function Footer() {
             rel="noopener noreferrer"
           >
             <FaLaptopCode />
+            <span className="sr-only">Sebastián Cóceres - Desarrollador web</span>
           </a>
         </p>
-        <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <span>
+          <Link href="/politica-cookies">Politica de Cookies</Link>
+        </span>
+        <span className="inline-flex sm:mt-0 mt-4 items-center justify-center sm:justify-start">
           <Link
             target="_blank"
             rel="noreferrer nofollow noopener"
@@ -25,6 +29,7 @@ function Footer() {
           >
             <a className="text-gray-400">
               <FaFacebookF />
+              <span className="sr-only">Facebook</span>
             </a>
           </Link>
           <Link
@@ -34,6 +39,7 @@ function Footer() {
           >
             <a className="ml-3 text-gray-400">
               <FaInstagram />
+              <span className="sr-only">Instagram</span>
             </a>
           </Link>
           <Link
@@ -43,6 +49,7 @@ function Footer() {
           >
             <a className="ml-3 text-gray-400">
               <FaWhatsapp />
+              <span className="sr-only">Whatsapp</span>
             </a>
           </Link>
         </span>
