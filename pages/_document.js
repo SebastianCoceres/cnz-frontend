@@ -12,7 +12,7 @@ class MyDocument extends Document {
         <Head>
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=G-TNGFQVTXJQ`}
           />
           <script
             dangerouslySetInnerHTML={{
@@ -40,7 +40,7 @@ class MyDocument extends Document {
                         });
                     }
             
-                    gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
+                    gtag('config', 'G-TNGFQVTXJQ', {
                         page_path: window.location.pathname,
                     });
                 `,
