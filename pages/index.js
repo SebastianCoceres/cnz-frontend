@@ -29,7 +29,6 @@ export default function Home({ latestPosts, sports, bg, heroLogo }) {
   return (
     <div>
       <Head>
-        <html lang="es" /> 
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />

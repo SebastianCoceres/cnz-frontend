@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   useEffect(() => {
     const handleRouteChange = (url) => {
-      window.gtag("config", process.env.GOOGLE_ANALYTICS, {
+      window.gtag("config", "G-TNGFQVTXJQ", {
         page_path: url,
       });
     };

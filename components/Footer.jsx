@@ -18,9 +18,9 @@ function Footer() {
             <span className="sr-only">Sebastián Cóceres - Desarrollador web</span>
           </a>
         </p>
-        <span>
+        {/* <span>
           <Link href="/politica-cookies">Politica de Cookies</Link>
-        </span>
+        </span> */}
         <span className="inline-flex sm:mt-0 mt-4 items-center justify-center sm:justify-start">
           <Link
             target="_blank"

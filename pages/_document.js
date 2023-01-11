@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="es">
         <Head>
           <script
             async
@@ -19,21 +19,21 @@ class MyDocument extends Document {
               __html: `
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
-                    //this defaults to denying
+               
                     gtag('consent', 'default', {
                         'analytics_storage': 'denied'
                     });
             
                     gtag('js', new Date());
             
-                    //este función es la que nos devuelve el valor de la cookie de preferencias
+                    
                     function getCookie() {
                         const value = "; " + document.cookie;
                         const parts = value.split("; CookieConsent=");
                         if (parts.length === 2) return parts.pop().split(';').shift();
                     }
             
-                    //únicamente si el valor es true, se cargan los scripts de Google Analytics.
+                    
                     if(getCookie() === "true"){
                         gtag('consent', 'update', {
                             'analytics_storage': 'granted'

@@ -14,10 +14,6 @@ function Location() {
             height="100%"
             title="map"
             className="absolute inset-0 grayscale-[25%]"
-            frameBorder="0"
-            marginHeight="0"
-            marginWidth="0"
-            scrolling="no"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2980.939362003065!2d-0.8797379987501218!3d41.65705213709476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5914ed584d8af7%3A0xa90c62df63e5fc41!2sGimnasio%20del%20Club%20N%C3%A1utico!5e0!3m2!1ses!2ses!4v1665268846948!5m2!1ses!2ses"
           ></iframe>
           <div className="bg-gray-900 relative flex flex-wrap py-6 rounded shadow-md">

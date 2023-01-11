@@ -14,8 +14,6 @@ export default function politicaCookies() {
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>{title}</title>
         <meta name="description" content={description} key="desc" />
-        <meta name="og:title" content={title} />
-        <meta name="og:description" content={description} key="desc" />
       </Head>
       <section className="px-4 lg:px-24 h-screen w-screen flex flex-col justify-center">
         <div className="flex items-baseline">

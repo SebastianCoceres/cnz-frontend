@@ -1,6 +1,6 @@
 import React from "react";
 import useFormatDate from "../../hooks/useFormateDate";
-import News from ".";
+import News from "./index";
 import DOMPurify from "isomorphic-dompurify";
 import fetch from "isomorphic-fetch";
 import FileImage from "../../components/FileImage";
@@ -21,7 +21,6 @@ function NewsPage({ article, latestPosts }) {
   return (
     <>
       <Head>
-        <html lang="es" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />

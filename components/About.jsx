@@ -31,7 +31,7 @@ function About({ link = false, aboutPage = true }) {
         </div>
       </div>
       <div data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
-        <div className={aboutPage && "lg:w-4/6 mx-auto"}>
+        <div className={aboutPage? "lg:w-4/6 mx-auto" : ''}>
           <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
             Nuestra Historia
           </h2>
