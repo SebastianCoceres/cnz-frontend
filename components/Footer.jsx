@@ -4,13 +4,13 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="text-gray-400 bg-gray-900 body-font mt-[auto]">
+    <footer className="text-gray-200 bg-gray-900 body-font mt-[auto]">
       <div className="container px-5 py-8 mx-auto flex justify-between items-center sm:flex-row flex-col">
-        <p className="text-sm text-gray-400 sm:py-2 sm:mt-0 mt-4 flex items-center">
+        <p className="text-sm text-gray-200 sm:py-2 sm:mt-0 mt-4 flex items-center">
           © 2022 Club Náutico Zaragoza —
           <a
             href="https://www.linkedin.com/in/sebastian-coceres/"
-            className="text-gray-500 ml-1 text-lg"
+            className="text-gray-200 ml-1 text-lg"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -27,7 +27,7 @@ function Footer() {
             rel="noreferrer nofollow noopener"
             href="https://www.facebook.com/clubnauticozaragoza/"
           >
-            <a className="text-gray-400">
+            <a className="text-gray-200">
               <FaFacebookF />
               <span className="sr-only">Facebook</span>
             </a>
@@ -37,7 +37,7 @@ function Footer() {
             rel="noreferrer nofollow noopener"
             href="https://www.instagram.com/clubnauticozaragoza/"
           >
-            <a className="ml-3 text-gray-400">
+            <a className="ml-3 text-gray-200">
               <FaInstagram />
               <span className="sr-only">Instagram</span>
             </a>
@@ -47,7 +47,7 @@ function Footer() {
             rel="noreferrer nofollow noopener"
             href="https://wa.me/34676610277?text=Hola%20¡Quiero%20unirme%20a%20CNZ!"
           >
-            <a className="ml-3 text-gray-400">
+            <a className="ml-3 text-gray-200">
               <FaWhatsapp />
               <span className="sr-only">Whatsapp</span>
             </a>

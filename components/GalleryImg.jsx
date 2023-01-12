@@ -16,7 +16,7 @@ function GalleryImg({
       className={`relative ${gridSize}`}
     >
       <Link href={`./deportes/${imgArryTarget?.id}`}>
-        <a className="block h-full w-full">
+        <a className="block h-full w-full relative">
           {!!imgArryTarget.attributes.photolink ? (
             <Image
               className="object-cover object-center h-full w-full rounded-lg mb-8"

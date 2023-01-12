@@ -50,6 +50,17 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <noscript>
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `* { 
+                      opacity: 1 !important; 
+                      transform: unset !important; 
+                      pointer-events: auto !important; 
+                    }`,
+              }}
+            ></style>
+          </noscript>
         </body>
       </Html>
     );

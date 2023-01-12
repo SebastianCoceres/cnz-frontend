@@ -74,7 +74,7 @@ function About({ link = false, aboutPage = true }) {
           {link ? (
             <div className="flex justify-center">
               <Link href="./sobre-nosotros">
-                <a className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                <a className="flex mx-auto text-white bg-indigo-600 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-700 rounded text-lg">
                   Conócenos
                 </a>
               </Link>

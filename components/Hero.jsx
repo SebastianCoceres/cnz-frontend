@@ -43,7 +43,7 @@ function Hero({ fondo, heroLogo }) {
           <div className="mt-8 flex flex-wrap gap-4 text-center">
             <Link href="#contacto">
               <a
-                className="block w-full rounded bg-blue-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
+                className="block w-full rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring active:bg-indigo-500 sm:w-auto"
                 onClick={(e) => {
                   e.preventDefault();
                   useScrollSmooth("#contacto");
@@ -53,7 +53,7 @@ function Hero({ fondo, heroLogo }) {
               </a>
             </Link>
             <Link href="/sobre-nosotros">
-              <a className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-600 shadow hover:text-blue-700 focus:outline-none focus:ring active:text-blue-500 sm:w-auto">
+              <a className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-indigo-600 shadow hover:text-indigo-700 focus:outline-none focus:ring active:text-indigo-500 sm:w-auto">
                 Conócenos
               </a>
             </Link>
