@@ -12,9 +12,11 @@ function ImgGallery({
         <Image
           alt="gallery"
           src={src}
+          layout="fill"
+          className="object-cover"
         />
         <div className="px-8 py-10 relative z-10 w-full h-full border-4 border-gray-200 bg-white/75 backdrop:blur opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end">
-          <h2 className="tracking-widest text-lg title-font font-bold text-indigo-500 mb-1">
+          <h2 className="tracking-widest text-lg title-font font-bold text-indigo-600 mb-1">
             {title}
           </h2>
         </div>

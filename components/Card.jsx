@@ -45,7 +45,7 @@ function Card({ postData, aosDelay = 0 }) {
           </div>
           <div className="mt-4 ml-auto">
             <Link href={`/noticias/${postData.id}`}>
-              <a className="text-indigo-500 md:mb-2 lg:mb-0 hover:text-indigo-900 block">
+              <a className="text-indigo-600 md:mb-2 lg:mb-0 hover:text-indigo-800 block">
                 Ver más <FaLongArrowAltRight className="inline-block" />
               </a>
             </Link>

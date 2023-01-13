@@ -8,21 +8,21 @@ import { useRouter } from "next/router";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
-  const [haveNews, setHaveNews] = React.useState(false);
+  // const [haveNews, setHaveNews] = React.useState(false);
   const router = useRouter();
 
-  function handleNews(a) {
-    setHaveNews(a);
-  }
+  // function handleNews(a) {
+  //   setHaveNews(a);
+  // }
 
-  useEffect(() => {
-    function newsCount() {
-      return fetch(`${process.env.NEXT_PUBLIC_APIURL}/posts`)
-        .then((res) => res.json())
-        .then((res) => res.meta.pagination.pageCount);
-    }
-    newsCount().then((res) => res > 0 && handleNews(true));
-  }, []);
+  // useEffect(() => {
+  //   function newsCount() {
+  //     return fetch(`${process.env.NEXT_PUBLIC_APIURL}/posts`)
+  //       .then((res) => res.json())
+  //       .then((res) => res.meta.pagination.pageCount);
+  //   }
+  //   newsCount().then((res) => res > 0 && handleNews(true));
+  // }, []);
 
   return (
     <header className="text-gray-200 bg-gray-900 body-font fixed top-0 left-0 right-0 z-[1000]">
@@ -61,18 +61,16 @@ function Navbar() {
             menuOpen ? "open" : ""
           }`}
         >
-          {haveNews > 0 && (
-            <Link href="/noticias">
-              <a
-                className="p-4 lg:p-0 lg:mr-5 hover:text-white"
-                onClick={() => {
-                  setMenuOpen(false);
-                }}
-              >
-                Noticias
-              </a>
-            </Link>
-          )}
+          <Link href="/noticias">
+            <a
+              className="p-4 lg:p-0 lg:mr-5 hover:text-white"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+            >
+              Noticias
+            </a>
+          </Link>
 
           <Link href="/deportes">
             <a
@@ -104,15 +102,15 @@ function Navbar() {
               Sobre Nosotros
             </a>
           </Link>
-          <Link href="#contacto">
+          <Link href="/#contacto">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={(e) => {
-                e.preventDefault();
+                // e.preventDefault();
                 setMenuOpen(false);
-                useScrollSmooth("#contacto")
-                  ? null
-                  : router.push("/?scrollTo=contacto");
+                // useScrollSmooth("#contacto")
+                //   ? null
+                //   : router.push("/?scrollTo=contacto");
               }}
             >
               Contacto

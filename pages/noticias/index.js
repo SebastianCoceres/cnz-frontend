@@ -92,7 +92,7 @@ function News({ posts, meta, title = "Noticias CNZ", loadMore = true }) {
           <div className="container mx-auto text-center">
             {hasNextPage ? (
               <button
-                className="px-8 py-4 bg-indigo-500 text-white cursor-pointer rounded-xl shadow-md hover:bg-indigo-800"
+                className="px-8 py-4 bg-indigo-600 text-white cursor-pointer rounded-xl shadow-md hover:bg-indigo-800"
                 onClick={() => getNewPosts(currentPage)}
               >
                 {loading ? "Cargando..." : "Ver más"}

@@ -4,8 +4,10 @@ import instalacion1 from "../public/assets/sala-ebro.JPG";
 import instalacion2 from "../public/assets/instalaciones-1.jpg";
 import instalacion3 from "../public/assets/instalaciones-2.jpg";
 import instalacion4 from "../public/assets/hangar.JPG";
+import instalacion5 from "../public/assets/entrada.jpg";
 
 let photos = [
+  { url: instalacion5.src, title: "Entrada" },
   { url: instalacion1.src, title: "Sala Ebro" },
   { url: instalacion2.src, title: "Gimnasio" },
   { url: instalacion3.src, title: "Gimnasio" },

@@ -38,20 +38,17 @@ function MyApp({ Component, pageProps }) {
         expires={150}
         enableDeclineButton="true"
         declineButtonText="No, no utilizar cookies"
-        declineButtonClasses="bg-red-600 hover:bg-red-800 text-white px-4 py-2 rounded-md m-2"
+        declineButtonClasses="bg-rose-600 hover:bg-rose-800 text-white px-4 py-2 rounded-md m-2"
       >
         <p>
-          Esta página web únicamente utiliza cookies propias con finalidad
-          técnica, no recaba ni cede datos de carácter personal de los usuarios
-          sin su conocimiento.
+          Esta página web utiliza cookies con finalidades técnicas y estadísticas, no recaba ni cede datos de carácter personal de los usuarios sin su conocimiento.
         </p>
         <a
-          className="text-indigo-300 hover:text-indigo-500"
+          className="hover:text-indigo-300 font-bold text-lg my-4 inline-block"
           href="/politica-cookies"
         >
           Política de Cookies
         </a>
-        .
       </CookieConsent>
       <Footer />
     </>
