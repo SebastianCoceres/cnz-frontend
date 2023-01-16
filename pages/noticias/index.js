@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import kettlebel from "../../public/Kettlebell_notFound.png";
 import Head from "next/head";
 import cover from "../../public/fondo.jpg";
+import Custom404 from "../404";
 
 const PAGESIZE = 6;
 const description =

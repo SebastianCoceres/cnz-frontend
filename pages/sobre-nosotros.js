@@ -4,6 +4,7 @@ import Intalaciones from "../components/Intalaciones";
 import OurTeam from "../components/OurTeam";
 import Head from "next/head";
 import cover from "../public/exterior_club.jpg";
+import Custom404 from "./404";
 
 const title = "Sobre nosotros";
 const description =

@@ -3,6 +3,7 @@ import useFormateTime from "../hooks/useFormateTime";
 import Link from "next/link";
 import Head from "next/head";
 import cover from "../public/fondo.jpg";
+import Custom404 from "./404";
 
 const title = "Horarios de entrenamiento";
 const description = "Consulta todos los horarios de los deportes que ofrecemos";

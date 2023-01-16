@@ -2,6 +2,7 @@ import React from "react";
 import CardSport from "/components/CardSport";
 import Head from "next/head";
 import cover from "../../public/fondo.jpg";
+import Custom404 from "../404";
 
 const description =
   "Conoce todo las actividades que puedes realizar en nuestas instalaciones";

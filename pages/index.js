@@ -7,6 +7,7 @@ import Location from "../components/Location";
 import News from "./noticias";
 import About from "../components/About";
 import fondo from "../public/fondo.jpg";
+import Custom404 from "./404";
 
 const title = "Club Náutico Zaragoza";
 const descriptionIndex =
@@ -73,6 +74,7 @@ export async function getStaticProps() {
       revalidate: 10,
     };
   } catch (err) {
+    console.error(err)
     return {
       props: {
         notfound: true,
