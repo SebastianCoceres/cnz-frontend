@@ -52,7 +52,7 @@ export async function getStaticProps() {
     ).json();
     const sports = await (
       await fetch(
-        `${process.env.NEXT_PUBLIC_APIURL}/sports?populate=portrait&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
+        `${process.env.NEXT_PUBLIC_APIURL}/sports?populate=*&sort[0]=order&pagination[pageSize]=6&filters[order][$gte]=1`
       )
     ).json();
 

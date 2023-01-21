@@ -15,7 +15,9 @@ function GalleryImg({
       data-aos-once="true"
       className={`relative ${gridSize}`}
     >
-      <Link href={`./deportes/${imgArryTarget?.id}`}>
+      <Link
+        href={`/secciones/${imgArryTarget?.attributes.sports_group.data.attributes.slug}/${imgArryTarget?.id}`}
+      >
         <a className="block h-full w-full relative">
           {!!imgArryTarget.attributes.photolink ? (
             <Image

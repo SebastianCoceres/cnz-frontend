@@ -89,7 +89,7 @@ function NewsPage({ article, latestPosts }) {
             {article.categories.data.map((sport) => {
               return (
                 <Link
-                  href={`/deportes/${sport.id}`}
+                  href={`/secciones/${sport.attributes.sports_group.data.attributes.slug}/${sport.id}`}
                   key={`deporte-${sport.id}`}
                 >
                   <a className="inline-block px-4 py-2 mr-4 text-gray-100 bg-slate-600 hover:bg-slate-800 border rounded">
@@ -119,7 +119,7 @@ export default NewsPage;
 export async function getStaticProps({ params }) {
   try {
     const newsRes = await fetch(
-      `${process.env.NEXT_PUBLIC_APIURL}/posts/${params.id}?populate=*`
+      `${process.env.NEXT_PUBLIC_APIURL}/posts/${params.id}?populate=deep`
     );
     const news = await newsRes.json();
 

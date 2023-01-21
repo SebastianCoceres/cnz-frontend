@@ -29,6 +29,7 @@ function Hero({ fondo, heroLogo }) {
               alt=""
               className=" object-contain"
               layout="fill"
+              priority="true"
             />
           </figure>
           <h1 className="text-3xl font-extrabold sm:text-5xl text-white">
