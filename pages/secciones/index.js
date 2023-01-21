@@ -9,7 +9,6 @@ const description =
   "Conoce todo las actividades que puedes realizar en nuestas instalaciones";
 
 function SportGroups({ sections, title = "Secciones deportivas" }) {
-  console.log(sections);
   if (!sections) {
     return <Custom404 />;
   }
