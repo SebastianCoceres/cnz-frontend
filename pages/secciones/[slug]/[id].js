@@ -2,9 +2,9 @@ import React from "react";
 import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
 import { FaNewspaper } from "react-icons/fa";
-import useFormatDate from "../../hooks/useFormateDate";
-import useFormatTime from "../../hooks/useFormateTime";
-import Custom404 from "../404";
+import useFormatDate from "../../../hooks/useFormateDate";
+import useFormatTime from "../../../hooks/useFormateTime";
+import Custom404 from "../../404";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -162,7 +162,7 @@ export async function getStaticProps({ params }) {
       revalidate: 10,
     };
   } catch (err) {
-    console.error(err)
+    console.error(err);
     return {
       props: {
         notfound: true,
@@ -174,13 +174,21 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const sportList = await (
-    await fetch("https://api.clubnauticozaragoza.com/sports")
+    await fetch(
+      "https://api.clubnauticozaragoza.com/sports?populate=sports_group"
+    )
   ).json();
 
   const paths = sportList.data.map((sport) => {
-    return { params: { id: sport.id.toString() } };
+    return {
+      params: {
+        id: sport.id.toString(),
+        slug: sport.attributes.sports_group.data.attributes.slug,
+      },
+    };
   });
 
+  console.log(paths);
   return {
     paths,
     fallback: "blocking",

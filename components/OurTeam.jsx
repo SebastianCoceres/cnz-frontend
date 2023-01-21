@@ -31,16 +31,18 @@ function OutTeam({ team }) {
           </p>
         </div>
         <div className="flex flex-wrap -m-2">
-          {team.map((person, i) => {
-            return (
-              <TeamCard
-                key={`person-${i}`}
-                person={person.attributes.Nombre}
-                job={person.attributes.Puesto}
-                social={person.attributes.socialmedia}
-              />
-            );
-          })}
+          {team
+            .sort((a, b) => a.attributes.orden - b.attributes.orden)
+            .map((person, i) => {
+              return (
+                <TeamCard
+                  key={`person-${person.id}`}
+                  person={person.attributes.Nombre}
+                  job={person.attributes.Puesto}
+                  social={person.attributes.socialmedia}
+                />
+              );
+            })}
         </div>
       </div>
     </section>

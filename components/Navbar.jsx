@@ -72,7 +72,7 @@ function Navbar() {
             </a>
           </Link>
 
-          <Link href="/deportes">
+          <Link href="/secciones">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {

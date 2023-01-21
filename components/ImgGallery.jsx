@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function ImgGallery({
   src = "https://dummyimage.com/600x360",
-  size = "lg:w-1/3 sm:w-1/2 w-full p-4 h-64",
+  size = "xl:w-1/3 sm:w-1/2 w-full p-4 h-64",
   title,
 }) {
   return (

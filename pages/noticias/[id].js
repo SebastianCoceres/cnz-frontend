@@ -13,7 +13,7 @@ function NewsPage({ article, latestPosts }) {
     return <Custom404 />;
   }
   const sanitizeHTML = DOMPurify.sanitize(article.content);
-  const htmlFix = sanitizeHTML.replace(
+  const htmlFix = sanitizeHTML.replaceAll(
     'src="/uploads',
     `src="${process.env.NEXT_PUBLIC_BASEURL}/uploads`
   );

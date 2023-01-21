@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "develop": "next dev",
-    "dev": "kill -9 $(lsof -t -i:3000) && next dev",
+    "develop": "next dev -p 3005",
+    "dev": "kill -9 $(lsof -t -i:3005) && next dev -p 3005",
     "build": "next build",
     "export": "next build && next export",
     "start": "next start",

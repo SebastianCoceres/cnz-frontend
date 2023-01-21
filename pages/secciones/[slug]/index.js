@@ -1,13 +1,13 @@
 import React from "react";
 import CardSport from "/components/CardSport";
 import Head from "next/head";
-import cover from "../../public/fondo.jpg";
-import Custom404 from "../404";
+import cover from "../../../public/fondo.jpg";
+import Custom404 from "../../404";
 
 const description =
   "Conoce todo las actividades que puedes realizar en nuestas instalaciones";
 
-function News({ sports, title = "Secciones deportivas" }) {
+function Deportes({ sports, title = "Deportes" }) {
   if (!sports) {
     return <Custom404 />;
   }
@@ -48,12 +48,12 @@ function News({ sports, title = "Secciones deportivas" }) {
   );
 }
 
-export default News;
+export default Deportes;
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_APIURL}/sports?populate=*`
+      `${process.env.NEXT_PUBLIC_APIURL}/sports?populate=*&filters[sports_group][slug][$eq]=${params.slug}`
     );
 
     const sports = await res.json();
@@ -73,4 +73,19 @@ export async function getStaticProps() {
       revalidate: 10,
     };
   }
+}
+
+export async function getStaticPaths() {
+  const sportGroup = await (
+    await fetch("https://api.clubnauticozaragoza.com/sports-groups")
+  ).json();
+
+  const paths = sportGroup.data.map((group) => {
+    return { params: { slug: group.attributes.slug } };
+  });
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
 }

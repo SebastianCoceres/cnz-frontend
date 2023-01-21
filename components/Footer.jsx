@@ -7,12 +7,14 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 
+const date = new Date();
+
 function Footer() {
   return (
     <footer className="text-gray-200 bg-gray-900 body-font mt-[auto]">
       <div className="container px-5 py-8 mx-auto flex justify-between items-center sm:flex-row flex-col">
         <p className="text-sm text-gray-200 sm:py-2 sm:mt-0 mt-4 flex items-center">
-          © 2022 Club Náutico Zaragoza —
+          {`© ${date.getFullYear()} Club Náutico Zaragoza —`}
           <a
             href="https://www.linkedin.com/in/sebastian-coceres/"
             className="text-gray-200 ml-1 text-lg"
