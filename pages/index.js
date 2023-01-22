@@ -8,16 +8,17 @@ import News from "./noticias";
 import About from "../components/About";
 import fondo from "../public/fondo.jpg";
 import Custom404 from "./404";
+import DOMPurify from "isomorphic-dompurify";
 
 const title = "Club Náutico Zaragoza";
 const descriptionIndex =
   "Inaugurado en 1964, el Club Náutico de Zaragoza es una Asociación Deportiva Básica, con Nº Reg. 979/01 , inscrita en elregistro general de asociaciones deportivas del Gobierno de Aragón";
 
-export default function Home({ latestPosts, sports, bg, heroLogo }) {
+export default function Home({ latestPosts, sports, bg, heroLogo, about }) {
   if (!latestPosts && !sports) {
     return <Custom404 />;
   }
-
+  const sanitizeHTML = DOMPurify.sanitize(about.attributes.description);
   return (
     <div>
       <Head>
@@ -34,7 +35,7 @@ export default function Home({ latestPosts, sports, bg, heroLogo }) {
 
       <main>
         <Hero fondo={bg ? bg : fondo} heroLogo={heroLogo} />
-        <About link={true} aboutPage={false} />
+        <About link={true} aboutPage={false} content={sanitizeHTML} />
         <Gallery images={sports} />
         <News posts={latestPosts} loadMore={false} />
         <Location />
@@ -56,6 +57,10 @@ export async function getStaticProps() {
       )
     ).json();
 
+    const about = await (
+      await fetch(`${process.env.NEXT_PUBLIC_APIURL}/about`)
+    ).json();
+
     const fondo = await (
       await fetch(`${process.env.NEXT_PUBLIC_APIURL}/background?populate=*`)
     ).json();
@@ -70,11 +75,12 @@ export async function getStaticProps() {
         sports: sports.data,
         bg: fondo.data,
         heroLogo: heroLogo.data,
+        about: about.data,
       },
       revalidate: 10,
     };
   } catch (err) {
-    console.error(err)
+    console.error(err);
     return {
       props: {
         notfound: true,

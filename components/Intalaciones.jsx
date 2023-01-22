@@ -1,20 +1,7 @@
 import React from "react";
 import ImgGallery from "./ImgGallery";
-import instalacion1 from "../public/assets/sala-ebro.JPG";
-import instalacion2 from "../public/assets/instalaciones-1.jpg";
-import instalacion3 from "../public/assets/instalaciones-2.jpg";
-import instalacion4 from "../public/assets/hangar.JPG";
-import instalacion5 from "../public/assets/entrada.jpg";
 
-let photos = [
-  { url: instalacion5.src, title: "Entrada" },
-  { url: instalacion1.src, title: "Sala Ebro" },
-  { url: instalacion2.src, title: "Gimnasio" },
-  { url: instalacion3.src, title: "Gimnasio" },
-  { url: instalacion4.src, title: "Hangar" },
-];
-
-function Intalaciones() {
+function Intalaciones({ data }) {
   return (
     <section
       data-aos="fade-up"
@@ -46,8 +33,12 @@ function Intalaciones() {
           </div>
         </div>
         <div className="flex flex-wrap -m-4">
-          {photos.map((img, i) => (
-            <ImgGallery key={`img-${i}`} src={img.url} title={img.title} />
+          {data.map((img, i) => (
+            <ImgGallery
+              key={`img-${i}`}
+              src={`${process.env.NEXT_PUBLIC_BASEURL}${img.attributes.image.data.attributes.url}`}
+              title={img.attributes.Title}
+            />
           ))}
         </div>
       </div>

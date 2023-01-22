@@ -4,7 +4,7 @@ import banderin from "../public/Banderin.png";
 import Image from "next/image";
 import Link from "next/link";
 
-function About({ link = false, aboutPage = true }) {
+function About({ link = false, aboutPage = true, content }) {
   return (
     <section
       className={`section-container py-24 mx-auto flex flex-wrap ${
@@ -31,7 +31,7 @@ function About({ link = false, aboutPage = true }) {
         </div>
       </div>
       <div data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
-        <div className={aboutPage? "lg:w-4/6 mx-auto" : ''}>
+        <div className={aboutPage ? "lg:w-4/6 mx-auto" : ""}>
           <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
             Nuestra Historia
           </h2>
@@ -52,22 +52,10 @@ function About({ link = false, aboutPage = true }) {
               </div>
             </div>
             <div className="lg:w-2/3 lg:pl-8 lg:py-8 lg:border-l border-gray-200 lg:border-t-0 border-t mt-4 pt-4 lg:mt-0">
-              <p className="leading-relaxed text-lg mb-4">
-                Inaugurado en <strong>1964</strong>, el Club Náutico de Zaragoza
-                es una Asociación Deportiva Básica, con{" "}
-                <strong>Nº&nbsp;Reg.&nbsp;979/01</strong> , inscrita en el
-                <strong>
-                  registro general de asociaciones deportivas del Gobierno de
-                  Aragón
-                </strong>
-              </p>
-              <p className="leading-relaxed text-lg mb-4">
-                En la actualidad gestionamos un edificio de propiedad municipal
-                de reciente construcción, pero los cimientos que sustentan el
-                club son los mismos que en sus inicios:{" "}
-                <strong>los deportes náuticos</strong>, que son la razón de ser
-                de nuestra entidad.
-              </p>
+              <article
+                className="article__content "
+                dangerouslySetInnerHTML={{ __html: content }}
+              ></article>
             </div>
           </div>
 
