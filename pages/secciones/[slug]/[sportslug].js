@@ -151,13 +151,12 @@ export async function getStaticProps({ params }) {
   try {
     const sport = await (
       await fetch(
-        `${process.env.NEXT_PUBLIC_APIURL}/sports/${params.id}?populate=deep`
+        `${process.env.NEXT_PUBLIC_APIURL}/sports/?populate=deep&filters[slug][$eq]=${params.sportslug}`
       )
     ).json();
-
     return {
       props: {
-        article: sport.data.attributes,
+        article: sport.data[0].attributes,
       },
       revalidate: 10,
     };
@@ -182,7 +181,7 @@ export async function getStaticPaths() {
   const paths = sportList.data.map((sport) => {
     return {
       params: {
-        id: sport.id.toString(),
+        sportslug: sport.attributes.slug,
         slug: sport.attributes.sports_group.data.attributes.slug,
       },
     };
@@ -193,3 +192,5 @@ export async function getStaticPaths() {
     fallback: "blocking",
   };
 }
+
+// id: sport.id.toString(),

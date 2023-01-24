@@ -89,7 +89,7 @@ function NewsPage({ article, latestPosts }) {
             {article.categories.data.map((sport) => {
               return (
                 <Link
-                  href={`/secciones/${sport.attributes.sports_group.data.attributes.slug}/${sport.id}`}
+                  href={`/secciones/${sport.attributes.sports_group.data.attributes.slug}/${sport.attributes.slug}`}
                   key={`deporte-${sport.id}`}
                 >
                   <a className="inline-block px-4 py-2 mr-4 text-gray-100 bg-slate-600 hover:bg-slate-800 border rounded">

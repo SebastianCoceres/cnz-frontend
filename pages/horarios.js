@@ -61,7 +61,7 @@ function Horarios({ sports }) {
               <div key={`calendar-${i}`} className="w-full lg:w-1/2 mb-16 px-4">
                 <div className="border rounded-lg overflow-hidden h-full">
                   <p className="text-xl font-bold mb-4 bg-gray-900 p-4 text-white">
-                    <Link href={`/deportes/${el.id}`}>
+                    <Link href={`/secciones/${el.attributes.sports_group.data.attributes.slug}/${el.attributes.slug}`}>
                       <a>{el.attributes.title}</a>
                     </Link>
                   </p>
@@ -109,7 +109,7 @@ export async function getStaticProps() {
   try {
     const sports = await (
       await fetch(
-        `${process.env.NEXT_PUBLIC_APIURL}/sports/?populate[calendario][populate]=%2A`
+        `${process.env.NEXT_PUBLIC_APIURL}/sports/?populate=deep`
       )
     ).json();
     return {
