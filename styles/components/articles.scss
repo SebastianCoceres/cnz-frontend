@@ -117,6 +117,7 @@
   }
   [style*=column]{
     margin: 1em 0;
+    break-inside: avoid-column;
   }
   [style*=column] img{
     margin-top: 0 !important;
