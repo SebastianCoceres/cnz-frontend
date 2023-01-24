@@ -115,4 +115,17 @@
       }
     }
   }
+  [style*=column]{
+    margin: 1em 0;
+  }
+  [style*=column] img{
+    margin-top: 0 !important;
+  }
+
+  [style*=column-count\:\ 2] img{
+    max-height: 18em;
+  }
+  [style*=column-count\:\ 3] img{
+    max-height: 12em;
+  }
 }
