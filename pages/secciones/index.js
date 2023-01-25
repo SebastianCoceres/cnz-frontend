@@ -24,7 +24,7 @@ function SportGroups({ sections, title = "Secciones deportivas" }) {
         <meta name="og:description" content={description} key="desc" />
         <meta name={"og:image"} title={"og:title"} content={cover.src} />
       </Head>
-      <section className="section-container text-gray-600 body-font min-h-[90vh] py-24 container mx-auto flex flex-col justify-center">
+      <section className="section-container w-full text-gray-600 body-font min-h-[90vh] py-24 lg:container px-5 mx-auto flex flex-col justify-center">
         <h2 className="self-start section-title sm:text-3xl text-2xl font-medium title-font pb-4 mb-8 text-gray-900 mt-8">
           Secciones deportivas
         </h2>

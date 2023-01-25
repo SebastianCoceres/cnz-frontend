@@ -32,7 +32,7 @@ function NewsPage({ article, latestPosts }) {
       </Head>
 
       <main className="container mx-auto py-24 px-4 md:px-8">
-        <section className="lg:max-w-4xl mx-auto">
+        <section className="lg:container mx-auto">
           <header className="mb-12">
             <div className="rounded-lg aspect-[2/1] lg:aspect-[3/1] overflow-hidden mb-8 relative">
               {!!article.photolink ? (

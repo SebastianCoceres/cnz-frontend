@@ -51,7 +51,7 @@ function Horarios({ sports }) {
         <meta name={"og:image"} title={"og:title"} content={cover.src} />
       </Head>
 
-      <section className="section-container container mx-auto py-48 w-full ">
+      <section className="section-container lg:container px-5 mx-auto py-48 w-full ">
         <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mb-8">
           Horarios de entrenamiento
         </h2>

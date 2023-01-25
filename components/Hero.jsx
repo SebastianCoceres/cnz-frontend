@@ -20,7 +20,7 @@ function Hero({ fondo, heroLogo }) {
       <div
         data-aos="fade-up"
         data-aos-duration="1500"
-        className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 flex h-screen items-center justify-center md:justify-start lg:px-8"
+        className="relative mx-auto lg:container px-5 py-32 flex h-screen items-center justify-center md:justify-start "
       >
         <div className="max-w-xl text-center sm:text-left">
           <figure className="flex justify-center relative w-40 h-40 mx-auto">

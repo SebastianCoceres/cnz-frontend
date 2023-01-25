@@ -7,11 +7,9 @@ import Link from "next/link";
 function About({ link = false, aboutPage = true, content }) {
   return (
     <section
-      className={`section-container py-24 mx-auto flex flex-wrap ${
-        aboutPage ? "container px-4" : "lg:container px-5 "
-      }`}
+      className={`section-container py-24 mx-auto flex flex-wrap lg:container px-5 `}
     >
-      <div className="w-full lg:w-4/6 mx-auto">
+      <div className="w-full mx-auto">
         <div
           data-aos="fade-up"
           data-aos-duration="1500"
@@ -31,7 +29,7 @@ function About({ link = false, aboutPage = true, content }) {
         </div>
       </div>
       <div data-aos="fade-up" data-aos-duration="1500" data-aos-once="true">
-        <div className={aboutPage ? "lg:w-4/6 mx-auto" : ""}>
+        <div className={aboutPage ? " mx-auto" : ""}>
           <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
             Nuestra Historia
           </h2>

@@ -17,9 +17,9 @@ function OutTeam({ team }) {
       data-aos="fade-up"
       data-aos-duration="1500"
       data-aos-once="true"
-      className="section-container text-gray-600 px-4 container mx-auto py-24 flex items-center"
+      className="section-container text-gray-600 px-5 lg:container mx-auto py-24 flex items-center"
     >
-      <div className="lg:w-4/6 mx-auto">
+      <div className="full-width mx-auto">
         <h3 className="section-title sm:text-3xl text-2xl font-medium title-font pb-4 text-gray-900 mt-8">
           Nuestro equipo
         </h3>

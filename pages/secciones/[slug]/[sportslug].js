@@ -30,7 +30,7 @@ function NewsPage({ article }) {
         <meta name="og:description" content={article.description} key="desc" />
         <meta name={"og:image"} title={"og:title"} content={article.cover} />
       </Head>
-      <main className="container mx-auto py-24 px-4 md:px-8">
+      <main className="lg:container mx-auto py-24 px-5">
         <section className="text-gray-600 body-font">
           <div className="flex flex-col lg:flex-row items-start py-24 relative">
             <div className="w-full lg:w-1/3 mb-4 lg:sticky lg:top-32 relative aspect-square">
