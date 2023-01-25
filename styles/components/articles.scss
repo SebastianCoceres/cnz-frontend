@@ -101,32 +101,41 @@
         font-size: 0.75rem;
         font-weight: bold;
         line-height: 1em;
-        color: #f9fafb !important; 
+        color: #f9fafb !important;
         background-color: #374151 !important;
         border-bottom: 1px solid #ddd;
       }
-      &:nth-child(even){
+      &:nth-child(even) {
         background-color: #f6f6f6aa;
       }
 
-      &:hover:not(:first-child){
+      &:hover:not(:first-child) {
         background-color: #6365f1;
         color: #fff;
       }
     }
   }
-  [style*=column]{
+  [style*="column"] {
     margin: 1em 0;
     break-inside: avoid-column;
   }
-  [style*=column] img{
+  [style*="column"] img {
     margin-top: 0 !important;
   }
 
-  [style*=column-count\:\ 2] img{
+  [style*="column-count\:\ 2"] img {
     max-height: 18em;
   }
-  [style*=column-count\:\ 3] img{
+  [style*="column-count\:\ 3"] img {
     max-height: 12em;
+  }
+
+  @media screen and (max-width: 768px) {
+    [style*="column"] {
+      column-count: 1 !important;
+    }
+    [style*="column"] img {
+      max-height: 100% !important;
+    }
   }
 }
