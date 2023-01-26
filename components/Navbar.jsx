@@ -2,8 +2,7 @@ import React, { useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../public/Logo.png";
-import useScrollSmooth from "../hooks/useScrollSmooth";
+import logo from "../public/Logo-30x30.png";
 import { useRouter } from "next/router";
 
 function Navbar() {
