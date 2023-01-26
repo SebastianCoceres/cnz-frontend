@@ -32,9 +32,9 @@ function Hero({ fondo, heroLogo }) {
               priority="true"
             />
           </figure>
-          <h1 className="text-3xl font-extrabold sm:text-5xl text-white">
+          <h2 className="text-3xl font-extrabold sm:text-5xl text-white">
             Club Náutico Zaragoza
-          </h1>
+          </h2>
 
           <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed text-white">
             Fundado en 1964

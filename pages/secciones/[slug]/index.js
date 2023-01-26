@@ -27,9 +27,9 @@ function Deportes({ sports, title = "Deportes" }) {
         <div className="section-container sports lg:container py-24 px-5 mx-auto">
           <div className="flex flex-wrap w-full mb-20">
             <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-              <h1 className="section-title sm:text-3xl text-2xl font-medium title-font pb-2 text-gray-900">
+              <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-2 text-gray-900">
                 <a>{title}</a>
-              </h1>
+              </h2>
             </div>
             <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
               Conoce todo las actividades que puedes realizar en nuestas

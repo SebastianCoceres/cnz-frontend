@@ -5,7 +5,7 @@ export default function Custom404() {
   return (
     <section className="min-h-[90vh] flex flex-col justify-center items-center">
       <Image src={kettle}></Image>
-      <h1 className="text-bold lg:font-bold">Página no encontrada</h1>
+      <h2 className="text-bold lg:font-bold">Página no encontrada</h2>
     </section>
   );
 }

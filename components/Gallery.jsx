@@ -7,11 +7,11 @@ function Gallery({ images }) {
     <section className="section-container lg:container px-5 py-24 mx-auto flex flex-wrap">
       <div className="flex flex-wrap w-full mb-20">
         <div className=" lg:w-1/2 w-full mb-6 lg:mb-0 pr-4">
-          <h1 className="section-title sm:text-3xl text-2xl font-medium title-font pb-2 text-gray-900">
+          <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-2 text-gray-900">
             <Link href="./deportes">
               <a>Nuestras actividades</a>
             </Link>
-          </h1>
+          </h2>
         </div>
         <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
           ¿Conoces todas las actividades que brindamos? Desde deportes náuticos

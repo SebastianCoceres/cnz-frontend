@@ -17,7 +17,7 @@ export default function politicaCookies() {
       </Head>
       <section className="px-4 lg:px-24 h-[90vh] w-screen max-w-3xl mx-auto flex flex-col justify-center">
         <div className="flex items-baseline">
-          <h1 className="font-bold text-3xl">Política de cookies</h1>
+          <h2 className="font-bold text-3xl">Política de cookies</h2>
           <p className="text-slate-600 text-sm px-4">
             - Última revisión 9 de Enero de 2023
           </p>
