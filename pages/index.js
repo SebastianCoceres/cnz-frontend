@@ -26,9 +26,9 @@ export default function Home({ latestPosts, sports, bg, heroLogo, about }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>{title}</title>
-        <meta name="description" content={descriptionIndex} key="desc" />
+        <meta name="description" content={descriptionIndex} />
         <meta name="og:title" content={title} />
-        <meta name="og:description" content={descriptionIndex} key="desc" />
+        <meta name="og:description" content={descriptionIndex} />
         <meta name={"og:image"} title={"og:title"} content={fondo.src} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
