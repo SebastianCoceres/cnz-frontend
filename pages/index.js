@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react";
+
 import Head from "next/head";
 import Hero from "../components/Hero";
 import Gallery from "../components/Gallery";

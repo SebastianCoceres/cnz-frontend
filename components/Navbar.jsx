@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../public/Logo-30x30.png";
+import logo from "../public/Logo-100x100.png";
 import { useRouter } from "next/router";
 
 function Navbar() {
