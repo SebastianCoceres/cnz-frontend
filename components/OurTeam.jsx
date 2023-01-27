@@ -1,15 +1,5 @@
 import React from "react";
-import TeamCard from "../components/TeamCard";
-
-// const Team = [
-//   { name: "José Manuel Larroy Calvo", job: "Presidente" },
-//   { name: "Juan Quílez Montañés", job: "Vicepresidente" },
-//   { name: "Ángel Ordovás Soriano", job: "Secretario" },
-//   { name: "Pedro Oliván Ferrando", job: "Tesorero" },
-//   { name: "Carlos Ezquerro Ibarra", job: "Piragüismo" },
-//   { name: "Carlos Belled Lacasa", job: "Remo" },
-//   { name: "Ignacio Martínez Bermejo", job: "Salvamento Y Socorrismo" },
-// ];
+import TeamCard from "./molecules/TeamCard";
 
 function OutTeam({ team }) {
   return (

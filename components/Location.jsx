@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 import { BsWhatsapp } from "react-icons/bs";
-import SocialButton from "./SocialButton";
+import SocialButton from "./molecules/SocialButton";
 
 function Location() {
   return (

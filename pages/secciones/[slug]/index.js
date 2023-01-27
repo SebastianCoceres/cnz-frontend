@@ -18,9 +18,9 @@ function Deportes({ sports, title = "Deportes" }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>{title}</title>
-        <meta name="description" content={description} key="desc" />
+        <meta name="description" content={description} />
         <meta name="og:title" content={title} />
-        <meta name="og:description" content={description} key="desc" />
+        <meta name="og:description" content={description} />
         <meta name={"og:image"} title={"og:title"} content={cover.src} />
       </Head>
       <section className="text-gray-600 body-font py-24">

@@ -1,5 +1,5 @@
 import React from "react";
-import ImgGallery from "./ImgGallery";
+import ImgGallery from "./molecules/ImgGallery";
 
 function Intalaciones({ data }) {
   return (

@@ -25,9 +25,9 @@ function NewsPage({ article }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>{article.title}</title>
-        <meta name="description" content={article.description} key="desc" />
+        <meta name="description" content={article.description} />
         <meta name="og:title" content={article.title} />
-        <meta name="og:description" content={article.description} key="desc" />
+        <meta name="og:description" content={article.description} />
         <meta name={"og:image"} title={"og:title"} content={article.cover} />
       </Head>
       <main className="lg:container mx-auto py-24 px-5">

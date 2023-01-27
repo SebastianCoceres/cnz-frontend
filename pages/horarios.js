@@ -45,9 +45,9 @@ function Horarios({ sports }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>{title}</title>
-        <meta name="description" content={description} key="desc" />
+        <meta name="description" content={description} />
         <meta name="og:title" content={title} />
-        <meta name="og:description" content={description} key="desc" />
+        <meta name="og:description" content={description} />
         <meta name={"og:image"} title={"og:title"} content={cover.src} />
       </Head>
 
@@ -61,7 +61,9 @@ function Horarios({ sports }) {
               <div key={`calendar-${i}`} className="w-full lg:w-1/2 mb-16 px-4">
                 <div className="border rounded-lg overflow-hidden h-full">
                   <p className="text-xl font-bold mb-4 bg-gray-900 p-4 text-white">
-                    <Link href={`/secciones/${el.attributes.sports_group.data.attributes.slug}/${el.attributes.slug}`}>
+                    <Link
+                      href={`/secciones/${el.attributes.sports_group.data.attributes.slug}/${el.attributes.slug}`}
+                    >
                       <a>{el.attributes.title}</a>
                     </Link>
                   </p>
@@ -108,9 +110,7 @@ export default Horarios;
 export async function getStaticProps() {
   try {
     const sports = await (
-      await fetch(
-        `${process.env.NEXT_PUBLIC_APIURL}/sports/?populate=deep`
-      )
+      await fetch(`${process.env.NEXT_PUBLIC_APIURL}/sports/?populate=deep`)
     ).json();
     return {
       props: {

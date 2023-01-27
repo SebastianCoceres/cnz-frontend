@@ -13,7 +13,7 @@ export default function politicaCookies() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <title>{title}</title>
-        <meta name="description" content={description} key="desc" />
+        <meta name="description" content={description} />
       </Head>
       <section className="px-4 lg:px-24 h-[90vh] w-screen max-w-3xl mx-auto flex flex-col justify-center">
         <div className="flex items-baseline">
@@ -25,13 +25,13 @@ export default function politicaCookies() {
         <div className="my-8 text-lg">
           <p className="mb-4">
             El <strong>Club Náutico Zaragoza</strong> no utiliza cookies para
-            recoger información de las personas usuarias. Únicamente se usan
-            con finalidad técnica y estadística.
+            recoger información de las personas usuarias. Únicamente se usan con
+            finalidad técnica y estadística.
           </p>
           <p className="mb-4">
-            Utilizamos <strong>Google Analytics</strong> para revisar
-            las visitas a nuestra web, asi como las páginas mas visitadas, con
-            el objetivo de conseguir mejorar nuestros servicios.
+            Utilizamos <strong>Google Analytics</strong> para revisar las
+            visitas a nuestra web, asi como las páginas mas visitadas, con el
+            objetivo de conseguir mejorar nuestros servicios.
           </p>
         </div>
       </section>

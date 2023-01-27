@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import GalleryImg from "./GalleryImg";
+import GalleryImg from "./molecules/GalleryImg";
 
 function Gallery({ images }) {
   return (

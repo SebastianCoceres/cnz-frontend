@@ -56,9 +56,9 @@ function News({ posts, meta, title = "Noticias CNZ", loadMore = true }) {
             content="width=device-width,initial-scale=1.0"
           />
           <title>{title}</title>
-          <meta name="description" content={description} key="desc" />
+          <meta name="description" content={description} />
           <meta name="og:title" content={title} />
-          <meta name="og:description" content={description} key="desc" />
+          <meta name="og:description" content={description} />
           <meta name={"og:image"} title={"og:title"} content={cover.src} />
         </Head>
       )}
