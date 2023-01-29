@@ -86,7 +86,7 @@ function NewsPage({ article, latestPosts }) {
             </article>
           )}
           <div className="mt-8">
-            {article.categories.data.map((sport) => {
+            {article.sports.data.map((sport) => {
               return (
                 <Link
                   href={`/secciones/${sport.attributes.sports_group.data.attributes.slug}/${sport.attributes.slug}`}
