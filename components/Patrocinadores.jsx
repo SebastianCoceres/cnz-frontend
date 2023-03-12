@@ -25,7 +25,7 @@ function Patrocinadores({ data }) {
                 >
                   <Image
                     src={`${process.env.NEXT_PUBLIC_BASEURL}${patr.attributes.logo.data.attributes.url}`}
-                    alt=""
+                    alt={patr.attributes.title}
                     className=" object-contain"
                     layout="fill"
                     priority="true"
