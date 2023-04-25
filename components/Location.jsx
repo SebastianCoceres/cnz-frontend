@@ -105,7 +105,7 @@ function Location() {
             <li className="w-full px-4 mb-2" title="+34 676 610 277">
               <SocialButton
                 title="¿Eres Socio? Haz tu reserva"
-                link="https://bookwhen.com/es/clubnauticozaragoza#focus=ev-s51j-20230426100000"
+                link="https://bookwhen.com/es/clubnauticozaragoza"
               >
                 <div className="relative">
                   <div className="w-5 h-5 absolute top-0 left-0 -translate-y-[50%] -translate-x-[50%] rounded-md"></div>
