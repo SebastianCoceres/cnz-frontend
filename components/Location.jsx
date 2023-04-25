@@ -2,6 +2,7 @@ import React from "react";
 import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 import { BsWhatsapp } from "react-icons/bs";
+import { FcCalendar } from "react-icons/fc";
 import SocialButton from "./molecules/SocialButton";
 
 function Location() {
@@ -98,6 +99,17 @@ function Location() {
                 <div className="relative">
                   <div className="bg-white w-5 h-5 absolute top-0 left-0 -translate-y-[50%] -translate-x-[50%] rounded-md"></div>
                   <BsWhatsapp className="w-6 h-6 absolute top-0 left-0  -translate-y-[50%] -translate-x-[50%] text-[#25D366] icon-fill" />
+                </div>
+              </SocialButton>
+            </li>
+            <li className="w-full px-4 mb-2" title="+34 676 610 277">
+              <SocialButton
+                title="¿Eres Socio? Haz tu reserva"
+                link="https://bookwhen.com/es/clubnauticozaragoza#focus=ev-s51j-20230426100000"
+              >
+                <div className="relative">
+                  <div className="w-5 h-5 absolute top-0 left-0 -translate-y-[50%] -translate-x-[50%] rounded-md"></div>
+                  <FcCalendar className="w-6 h-6 absolute top-0 left-0  -translate-y-[50%] -translate-x-[50%] text-[#25D366]" />
                 </div>
               </SocialButton>
             </li>

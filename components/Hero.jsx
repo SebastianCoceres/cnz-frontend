@@ -52,11 +52,15 @@ function Hero({ fondo, heroLogo }) {
                 ¡Quiero unirme!
               </a>
             </Link>
-            <Link href="/sobre-nosotros">
+            <a
+              href="https://bookwhen.com/es/clubnauticozaragoza"
+              target="_blank"
+              rel="noreferrer nofollow noopener"
+            >
               <a className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-indigo-600 shadow hover:text-indigo-800 focus:outline-none focus:ring active:text-indigo-800 sm:w-auto">
-                Conócenos
+                Reservas
               </a>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
