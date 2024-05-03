@@ -13,6 +13,8 @@ RUN npm install
 # Copiamos todo el contenido de la carpeta al directorio de trabajo
 COPY . .
 
+RUN npm run build
+
 EXPOSE 3000
 
 CMD ["npm", "start"]
