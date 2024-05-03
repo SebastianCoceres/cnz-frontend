@@ -1,5 +1,7 @@
 # Usamos una imagen base de Node.js
 FROM node:22-alpine
+ARG NEXT_PUBLIC_BASEURL=${NEXT_PUBLIC_BASEURL}
+ENV NEXT_PUBLIC_APIURL=${NEXT_PUBLIC_APIURL}
 
 # Establecemos el directorio de trabajo en /app
 WORKDIR /app
