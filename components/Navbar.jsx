@@ -11,7 +11,7 @@ function Navbar() {
     <header className="text-gray-200 bg-gray-900 body-font fixed top-0 left-0 right-0 z-[1000]">
       <div className="container mx-auto flex flex-wrap p-5 flex-col lg:flex-row justify-between">
         <div className="flex justify-between items-center">
-          <Link href="/">
+          <Link legacyBehavior href="/">
             <a
               className="flex title-font font-medium items-center text-white lg:mb-0"
               onClick={() => {
@@ -44,7 +44,7 @@ function Navbar() {
             menuOpen ? "open" : ""
           }`}
         >
-          <Link href="/noticias">
+          <Link legacyBehavior href="/noticias">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {
@@ -55,7 +55,7 @@ function Navbar() {
             </a>
           </Link>
 
-          <Link href="/secciones">
+          <Link legacyBehavior href="/secciones">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {
@@ -65,7 +65,7 @@ function Navbar() {
               Secciones deportivas
             </a>
           </Link>
-          <Link href="/horarios">
+          <Link legacyBehavior href="/horarios">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {
@@ -75,7 +75,7 @@ function Navbar() {
               Horarios
             </a>
           </Link>
-          <Link href="/sobre-nosotros">
+          <Link legacyBehavior href="/sobre-nosotros">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={() => {
@@ -85,7 +85,7 @@ function Navbar() {
               Sobre Nosotros
             </a>
           </Link>
-          <Link href="/#contacto">
+          <Link legacyBehavior href="/#contacto">
             <a
               className="p-4 lg:p-0 lg:mr-5 hover:text-white"
               onClick={(e) => {

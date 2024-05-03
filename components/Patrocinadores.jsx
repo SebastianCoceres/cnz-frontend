@@ -9,6 +9,7 @@ function Patrocinadores({ data }) {
         {data.map((patr, i) => {
           return (
             <Link
+              legacyBehavior
               key={`patrocinador-${i}-${patr.attributes.title}`}
               href={patr.attributes.link}
             >

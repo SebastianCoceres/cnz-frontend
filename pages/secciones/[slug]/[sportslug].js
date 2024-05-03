@@ -65,7 +65,7 @@ function NewsPage({ article }) {
             {article.calendario.length > 0 && (
               <section className="w-full lg:w-1/2 lg:px-4">
                 <h3 className="text-2xl font-bold mt-2 mb-4">
-                  <Link href="/horarios">
+                  <Link legacyBehavior href="/horarios">
                     <a className="hover:text-indigo-800">Horarios</a>
                   </Link>
                 </h3>
@@ -102,7 +102,7 @@ function NewsPage({ article }) {
             {article.news.data.length > 0 && (
               <section className="w-full lg:w-1/2 my-16 lg:my-0 lg:px-4">
                 <h3 className="text-2xl font-bold pb-2">
-                  <Link href="/noticias">
+                  <Link legacyBehavior href="/noticias">
                     <a className="hover:text-indigo-800">
                       Noticias relacionadas
                     </a>
@@ -121,7 +121,7 @@ function NewsPage({ article }) {
                         return (
                           <div className="w-full mb-2" key={`news-${el.id}`}>
                             <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between h-full ">
-                              <Link href={`/noticias/${el.id}`}>
+                              <Link legacyBehavior href={`/noticias/${el.id}`}>
                                 <a className="text-xl flex items-center ">
                                   <FaNewspaper className="hidden md:inline-block mr-2" />
                                   {el.attributes.title}
@@ -174,7 +174,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const sportList = await (
     await fetch(
-      "https://api.clubnauticozaragoza.com/sports?populate=sports_group"
+      process.env.NEXT_PUBLIC_APIURL + "/sports?populate=sports_group"
     )
   ).json();
 
@@ -192,5 +192,3 @@ export async function getStaticPaths() {
     fallback: "blocking",
   };
 }
-
-// id: sport.id.toString(),

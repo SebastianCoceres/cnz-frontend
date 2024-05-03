@@ -36,6 +36,7 @@ function CardSport({ sportData }) {
         </p>
 
         <Link
+          legacyBehavior
           href={`/secciones/${sportData.attributes.sports_group.data.attributes.slug}/${sportData.attributes.slug}`}
         >
           <a className="btnSeeMore mt-6 text-white bg-indigo-600 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">

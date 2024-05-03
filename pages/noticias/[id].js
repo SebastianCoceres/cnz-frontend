@@ -89,6 +89,7 @@ function NewsPage({ article, latestPosts }) {
             {article.sports.data.map((sport) => {
               return (
                 <Link
+                  legacyBehavior
                   href={`/secciones/${sport.attributes.sports_group.data.attributes.slug}/${sport.attributes.slug}`}
                   key={`deporte-${sport.id}`}
                 >
@@ -147,7 +148,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("https://api.clubnauticozaragoza.com/posts");
+  const res = await fetch(process.env.NEXT_PUBLIC_APIURL + "/posts");
   const newsList = await res.json();
 
   const paths = newsList.data.map((news) => {

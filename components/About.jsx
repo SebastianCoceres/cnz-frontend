@@ -16,7 +16,7 @@ function About({ link = false, aboutPage = true, content }) {
           data-aos-once="true"
           className="relative rounded-lg h-64 overflow-hidden"
         >
-          <Link href="../public/exterior_club.jpg">
+          <Link legacyBehavior href="../public/exterior_club.jpg">
             <a className="relative block w-full h-full">
               <Image
                 src={exteriorClub.src}
@@ -59,7 +59,7 @@ function About({ link = false, aboutPage = true, content }) {
 
           {link ? (
             <div className="flex justify-center">
-              <Link href="./sobre-nosotros">
+              <Link legacyBehavior href="./sobre-nosotros">
                 <a className="flex mx-auto text-white bg-indigo-600 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-800 rounded text-lg">
                   Conócenos
                 </a>

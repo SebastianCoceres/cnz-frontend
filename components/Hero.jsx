@@ -41,7 +41,7 @@ function Hero({ fondo, heroLogo }) {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-center">
-            <Link href="#contacto">
+            <Link  href="#contacto" legacyBehavior>
               <a
                 className="block w-full rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-indigo-800 focus:outline-none focus:ring active:bg-indigo-800 sm:w-auto"
                 onClick={(e) => {
@@ -57,9 +57,9 @@ function Hero({ fondo, heroLogo }) {
               target="_blank"
               rel="noreferrer nofollow noopener"
             >
-              <a className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-indigo-600 shadow hover:text-indigo-800 focus:outline-none focus:ring active:text-indigo-800 sm:w-auto">
+              <span className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-indigo-600 shadow hover:text-indigo-800 focus:outline-none focus:ring active:text-indigo-800 sm:w-auto">
                 Reservas
-              </a>
+              </span>
             </a>
           </div>
         </div>

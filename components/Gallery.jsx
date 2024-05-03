@@ -8,7 +8,7 @@ function Gallery({ images }) {
       <div className="flex flex-wrap w-full mb-20">
         <div className=" lg:w-1/2 w-full mb-6 lg:mb-0 pr-4">
           <h2 className="section-title sm:text-3xl text-2xl font-medium title-font pb-2 text-gray-900">
-            <Link href="./deportes">
+            <Link legacyBehavior href="./deportes">
               <a>Nuestras actividades</a>
             </Link>
           </h2>

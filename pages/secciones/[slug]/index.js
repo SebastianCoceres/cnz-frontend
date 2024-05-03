@@ -83,7 +83,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const sportGroup = await (
-    await fetch("https://api.clubnauticozaragoza.com/sports-groups")
+    await fetch(process.env.NEXT_PUBLIC_APIURL + "/sports-groups")
   ).json();
 
   const paths = sportGroup.data.map((group) => {

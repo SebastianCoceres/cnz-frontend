@@ -10,7 +10,7 @@ function SportsGroupsCard({ group }) {
       data-aos-once="true"
       className="sportCard w-full mb-8 px-4 text-gray-600 md:w-1/2 xl:w-1/3"
     >
-      <Link href={`/secciones/${group.attributes.slug}`}>
+      <Link legacyBehavior href={`/secciones/${group.attributes.slug}`}>
         <a>
           <figure className="relative group overflow-hidden bg-black m-auto aspect-[4/3] transition-all rounded-lg">
             <Image

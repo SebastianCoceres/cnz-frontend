@@ -28,19 +28,19 @@ function Footer() {
           </a>
         </p>
         <div>
-          <Link href="/politica-cookies">
+          <Link legacyBehavior href="/politica-cookies">
             <a>
               <span className="inline-block px-4">Politica de Cookies</span>
             </a>
           </Link>
-          <Link href="/patrocinadores">
+          <Link legacyBehavior href="/patrocinadores">
             <a>
               <span className="inline-block px-4">Patrocinadores</span>
             </a>
           </Link>
         </div>
         <span className="inline-flex sm:mt-0 mt-4 items-center justify-center sm:justify-start">
-          <Link
+          <Link legacyBehavior
             target="_blank"
             rel="noreferrer nofollow noopener"
             href="https://www.facebook.com/clubnauticozaragoza/"
@@ -50,7 +50,7 @@ function Footer() {
               <span className="sr-only">Facebook</span>
             </a>
           </Link>
-          <Link
+          <Link legacyBehavior
             target="_blank"
             rel="noreferrer nofollow noopener"
             href="https://www.instagram.com/clubnauticozaragoza/"
@@ -60,7 +60,7 @@ function Footer() {
               <span className="sr-only">Instagram</span>
             </a>
           </Link>
-          <Link
+          <Link legacyBehavior
             target="_blank"
             rel="noreferrer nofollow noopener"
             href="https://wa.me/34676610277?text=Hola%20¡Quiero%20unirme%20a%20CNZ!"
