@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["http://admin.clubnauticozaragoza.com:1337"],
+    domains: ["https://cnz-backend.app.sebastiancoceres.dev"],
     unoptimized: true,
     remotePatterns: [
       {
