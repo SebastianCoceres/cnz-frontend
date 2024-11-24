@@ -59,86 +59,12 @@ function NewsPage({ article }) {
                 className="article__content "
                 dangerouslySetInnerHTML={{ __html: htmlFix }}
               ></article>
+              <Link legacyBehavior href="/horarios">
+                <a className="text-white bg-indigo-600 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-800 rounded">Ver Horarios</a>
+              </Link>
             </div>
           </div>
-          <div className="flex flex-wrap lg:-mx-4">
-            {article.calendario.length > 0 && (
-              <section className="w-full lg:w-1/2 lg:px-4">
-                <h3 className="text-2xl font-bold mt-2 mb-4">
-                  <Link legacyBehavior href="/horarios">
-                    <a className="hover:text-indigo-800">Horarios</a>
-                  </Link>
-                </h3>
-                <hr className="my-4" />
-                <ul>
-                  {article.calendario.map((el, i) => {
-                    return (
-                      <li
-                        key={`diaDeporte-${i}`}
-                        className="mb-4 w-full flex flex-wrap items-center
-                  "
-                      >
-                        <span className="font-bold w-full lg:w-[5em] block mr-4 mb-2 text-xl ">
-                          {el.dias.data[0].attributes.dias}:
-                        </span>
-                        <div className="flex flex-wrap">
-                          {el.horarios.data.map((hora, i) => {
-                            return (
-                              <span
-                                key={`horaDeporte-${i}`}
-                                className="text-[.8em] inline-block mb-2  mr-2 px-4 py-2 bg-gray-900 text-white rounded-md"
-                              >
-                                {useFormatTime(hora.attributes.Hora)}
-                              </span>
-                            );
-                          })}
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </section>
-            )}
-            {article.news.data.length > 0 && (
-              <section className="w-full lg:w-1/2 my-16 lg:my-0 lg:px-4">
-                <h3 className="text-2xl font-bold pb-2">
-                  <Link legacyBehavior href="/noticias">
-                    <a className="hover:text-indigo-800">
-                      Noticias relacionadas
-                    </a>
-                  </Link>
-                </h3>
-                <div className="flex flex-wrap w-full">
-                  <>
-                    {article.news.data
-                      .sort((a, b) =>
-                        new Date(a.publishedAt) < new Date(b.publishedAt)
-                          ? 1
-                          : -1
-                      )
-                      .slice(0, 3)
-                      .map((el) => {
-                        return (
-                          <div className="w-full mb-2" key={`news-${el.id}`}>
-                            <div className="border border-l-4 p-4 flex flex-col md:flex-row md:items-center justify-between h-full ">
-                              <Link legacyBehavior href={`/noticias/${el.id}`}>
-                                <a className="text-xl flex items-center ">
-                                  <FaNewspaper className="hidden md:inline-block mr-2" />
-                                  {el.attributes.title}
-                                </a>
-                              </Link>
-                              <small className="text-xs text-gray-500 md:ml-4">
-                                ({useFormatDate(el.attributes.publishedAt)})
-                              </small>
-                            </div>
-                          </div>
-                        );
-                      })}
-                  </>
-                </div>
-              </section>
-            )}
-          </div>
+
         </section>
       </main>
     </>
