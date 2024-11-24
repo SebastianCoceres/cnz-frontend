@@ -74,7 +74,7 @@ function News({ posts, meta, title = "Noticias CNZ", loadMore = true }) {
               </h2>
             </div>
             <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
-              Todas la noticias sobre el <strong>Club Náutico Zaragoza</strong>.
+              Todas la noticias sobre el <strong>Club Náutico Zaragoza</strong>.<br />
               Entérate de todo lo que pasa en nuestro amado club en un par de
               clicks.
             </p>
